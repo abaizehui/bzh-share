@@ -3,7 +3,7 @@
   "projectname": "bzh-share",
   "setting": {
     "compileHotReLoad": true,
-    "urlCheck": false
+    "urlCheck": true
   },
   "libVersion": "3.6.6"
 }
