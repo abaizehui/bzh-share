@@ -11,7 +11,7 @@ Page({
     activeTab: null,
     productList: [],
     sortType: null, // 记录当前选中的类型
-    categoryId:null,
+    categoryId: null
   },
   /**
    * 生命周期函数--监听页面加载

@@ -1,0 +1,38 @@
+<view class="search-page">
+  <!-- 搜索栏 -->
+
+  <view class="search-container">
+  <view class="search-input-box">
+    <input class="search-input" type="text" value="{{inputValue}}" bindinput="handleInput" />
+    <view class="clear-button" wx:if="{{inputValue.length > 0}}" bindtap="clearInput">
+      <icon type="clear"></icon>
+    </view>
+  </view>
+  <view class="search-button" bindtap="search">搜索</view>
+</view>
+
+<view class="history-search-container" wx:if="{{historySearch.length > 0}}">
+  <view class="history-search-title">历史搜索</view>
+  <view class="clear-history-button" bindtap="clearHistory">
+    <icon type="delete"></icon>
+  </view>
+  <view class="history-search-items">
+    <view class="history-item" wx:for="{{historySearch}}" wx:key="index" bindtap="selectHistory"  data-word="{{item}}">{{item}}</view>
+  </view>
+</view>
+
+
+<view class="serach-products" wx:if="{{serachProducts.length > 0}}">
+      <view class="serach-product-list">
+        <view class="serach-product-item" wx:for="{{serachProducts}}" wx:key="id">
+          <image class="serach-product-img" src="{{item.imageUrl}}" mode="aspectFill"></image>
+          <view class="serach-product-info">
+            <text class="serach-product-name">{{item.productName}}</text>
+            <text class="serach-product-price">¥{{item.productPrice}}</text>
+          </view>
+        </view>
+      </view>
+  </view>
+
+
+</view>

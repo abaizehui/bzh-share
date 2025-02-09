@@ -1,8 +1,10 @@
 <view class="container">
+<navigator class="search-navigator" url="/pages/search/serach" open-type="navigate"> 
   <view class="search-container">
     <icon type="search" class="search-icon"></icon>
-    <input placeholder="搜索" class="search-input"></input>
+    <input placeholder="搜索" class="search-input" disabled></input>
 </view>
+</navigator>
 
 <view class="tab-container">
   <view class="tab-item {{activeTab === 'default'? 'active' : ''}}" bindtap="switchTab" data-tab="default">默认</view>

@@ -23,6 +23,7 @@ getStore: function () {
       url: baseUrl+ '/wx/store/getStoreByAppId?appId=' +appId,
       method: 'GET',
       success: function (res) {
+          wx.setStorageSync('storeId', res.data.data.id);
           this.getBanners(res.data.data.id);
           this.getCategories(res.data.data.id);
           this.getRecommendProducts(res.data.data.id);
