@@ -8,11 +8,13 @@
   </swiper>
 
   <scroll-view class="category-scroll-container" scroll-x="true" style="white-space: nowrap;">
-  <block wx:for="{{categories}}" wx:key="id">
+  <block wx:for="{{categories}}" wx:key="id" >
     <view class="category-item">
-      <view class="category-content">
-        <image src="{{item.imageUrl}}" mode="widthFix"></image>
-        <text class="category-name">{{item.categoryName}}</text>
+      <view>
+        <navigator class="category-navigator" url="/pages/category/category" open-type="reLaunch"> 
+          <image src="{{item.imageUrl}}" mode="widthFix"></image>
+          <text class="category-name">{{item.categoryName}}</text>
+        </navigator>
      </view>
     </view>
   </block>

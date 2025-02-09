@@ -16,6 +16,7 @@ Page({
   onLoad: function () {
     this.getStore();
   },
+  
 
 // 获取门店信息
 getStore: function () {

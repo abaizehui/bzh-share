@@ -3,9 +3,9 @@
   "pages": [
     "pages/index/index",
     "pages/category/category",
-    "pages/usercenter/usercenter"
+    "pages/usercenter/usercenter",
+    "pages/product"
   ],
-
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
@@ -14,7 +14,6 @@
     "enablePullDownRefresh": false,
     "backgroundColor": "#efefef"
   },
-
   "tabBar": {
     "custom": false,
     "color": "#8a8a8a",
@@ -41,8 +40,6 @@
       }
     ]
   },
-
-
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
