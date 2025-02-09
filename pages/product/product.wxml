@@ -1,0 +1,30 @@
+<view class="container">
+  <view class="search-container">
+    <icon type="search" class="search-icon"></icon>
+    <input placeholder="搜索" class="search-input"></input>
+</view>
+
+<view class="tab-container">
+  <view class="tab-item {{activeTab === 'default'? 'active' : ''}}" bindtap="switchTab" data-tab="default">默认</view>
+  <view class="tab-item {{activeTab === 'newest'? 'active' : ''}}" bindtap="switchTab" data-tab="newest">最新</view>
+  <view class="price-tab {{activeTab === 'price'? 'active' : ''}}" bindtap="switchTab" data-tab="price">
+    <text class="tab-text">价格</text>
+    <view class="sort-arrows" bindtap="switchTab" data-tab="price">
+      <view class="arrow-up {{sortType === 'asc' && activeTab === 'price'? 'active' : ''}}"></view>
+      <view class="arrow-down {{sortType === 'desc' && activeTab === 'price'? 'active' : ''}}"></view>
+    </view>
+  </view>
+</view>
+
+  <view class="product-list">
+    <block wx:for="{{productList}}" wx:key="id">
+      <view class="product-item">
+        <image src="{{item.imageUrl}}" mode="aspectFill"></image>
+        <view class="product-info">
+          <view class="product-name">{{item.productName}}</view>
+          <view class="product-price">￥{{item.productPrice}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

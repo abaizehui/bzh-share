@@ -59,7 +59,7 @@ page {
   font-weight: bold;
   margin-bottom: 10rpx;
   padding: 20rpx;
-  margin-top: 50rpx; /* 增加上边距 */
+  margin-top: 40rpx; /* 增加上边距 */
 }
 
 .recommend-product-list {
@@ -92,7 +92,7 @@ page {
 }
 
 .recommend-product-name {
-  font-size: 28rpx;
+  font-size: 27rpx;
   font-family: Arial, sans-serif;
   color: rgb(20, 20, 20);
 }
@@ -100,4 +100,5 @@ page {
 .recommend-product-price {
   color: red;
   margin-top: 5rpx;
+  font-size: 27rpx;
 }

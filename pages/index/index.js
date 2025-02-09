@@ -3,7 +3,6 @@ const app = getApp();
 const baseUrl = app.globalData.apiBaseUrl;
 const appId = app.globalData.appId;
 
-
 Page({
   data: {
     banners: [],
@@ -79,7 +78,6 @@ getRecommendProducts: function (storeId) {
     method: 'GET',
     success: (res) => {
       if (res.statusCode === 200) {
-        console.log(res.data);
         const recommendProducts = urlUtils.appendBaseUrlToImages(res.data);
         this.setData({
           recommendProducts: recommendProducts

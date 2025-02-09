@@ -11,7 +11,7 @@
   <block wx:for="{{categories}}" wx:key="id" >
     <view class="category-item">
       <view>
-        <navigator class="category-navigator" url="/pages/category/category" open-type="reLaunch"> 
+        <navigator class="category-navigator" url="/pages/product/product?categoryId={{item.id}}" open-type="navigate"> 
           <image src="{{item.imageUrl}}" mode="widthFix"></image>
           <text class="category-name">{{item.categoryName}}</text>
         </navigator>
