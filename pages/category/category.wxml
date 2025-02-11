@@ -1,19 +1,19 @@
 <view class="container">
   <!-- 搜索栏 -->
-  <view class="search-bar">
+  <navigator class="search-navigator" url="/pages/search/serach" open-type="navigate"> 
+  <view class="search-container">
     <icon type="search" class="search-icon"></icon>
-    <input placeholder="搜索" class="search-input"></input>
-  </view>
+    <input placeholder="搜索" class="search-input" disabled></input>
+</view>
+</navigator>
   <!-- 分类导航栏 -->
-  <view class="category-nav-container">
-    <view class="category-nav-scroll">
-      <view class="category-nav">
-        <view class="category-item {{item.isActive? 'active' : ''}}" wx:for="{{categoryList}}" wx:key="id" bindtap="switchCategory" data - index="{{index}}">
-          <text>{{item.categoryName}}</text>
-        </view>
-      </view>
+  
+  <scroll-view class="tab-scroll" scroll-x="true" scroll-with-animation="true">
+    <view class="tab-item" wx:for="{{categoryList}}" wx:key="item.id" bindtap="switchTab" data-index="{{item.id}}" data-name="{{item.categoryName}}"
+      class="{{currentIndex === item.id? 'tab-item-active' : ''}}">
+      <text>{{item.categoryName}}</text>
     </view>
-  </view>
+  </scroll-view>
   <!-- 产品列表 -->
   <view class="category-products" wx:if="{{productList.length > 0}}">
         <view class="category-product-list">
