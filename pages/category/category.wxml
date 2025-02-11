@@ -1,2 +1,29 @@
-<!--pages/category/category.wxml-->
-<text>pages/category/category.wxml</text>
+<view class="container">
+  <!-- 搜索栏 -->
+  <view class="search-bar">
+    <icon type="search" class="search-icon"></icon>
+    <input placeholder="搜索" class="search-input"></input>
+  </view>
+  <!-- 分类导航栏 -->
+  <view class="category-nav-container">
+    <view class="category-nav-scroll">
+      <view class="category-nav">
+        <view class="category-item {{item.isActive? 'active' : ''}}" wx:for="{{categoryList}}" wx:key="id" bindtap="switchCategory" data - index="{{index}}">
+          <text>{{item.categoryName}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 产品列表 -->
+  <view class="category-products" wx:if="{{productList.length > 0}}">
+        <view class="category-product-list">
+          <view class="category-product-item" wx:for="{{productList}}" wx:key="id">
+            <image class="category-product-img" src="{{item.imageUrl}}" mode="aspectFill"></image>
+            <view class="category-product-info">
+              <text class="category-product-name">{{item.productName}}</text>
+              <text class="category-product-price">¥{{item.productPrice}}</text>
+            </view>
+          </view>
+        </view>
+    </view>
+</view>

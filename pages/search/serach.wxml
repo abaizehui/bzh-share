@@ -21,18 +21,25 @@
   </view>
 </view>
 
+<view class="serach-result-container" wx:if="{{isSearching}}">
+  <view wx:if="{{!hasResult}}" class="no-result-box">
+    <view class="no-result-text">抱歉，没有相关商品</view>
+  </view>
 
-<view class="serach-products" wx:if="{{serachProducts.length > 0}}">
-      <view class="serach-product-list">
-        <view class="serach-product-item" wx:for="{{serachProducts}}" wx:key="id">
-          <image class="serach-product-img" src="{{item.imageUrl}}" mode="aspectFill"></image>
-          <view class="serach-product-info">
-            <text class="serach-product-name">{{item.productName}}</text>
-            <text class="serach-product-price">¥{{item.productPrice}}</text>
+    <view class="serach-products" wx:if="{{serachProducts.length > 0}}">
+        <view class="serach-product-list">
+          <view class="serach-product-item" wx:for="{{serachProducts}}" wx:key="id">
+            <image class="serach-product-img" src="{{item.imageUrl}}" mode="aspectFill"></image>
+            <view class="serach-product-info">
+              <text class="serach-product-name">{{item.productName}}</text>
+              <text class="serach-product-price">¥{{item.productPrice}}</text>
+            </view>
           </view>
         </view>
-      </view>
-  </view>
+    </view>
+
+</view>
+
 
 
 </view>

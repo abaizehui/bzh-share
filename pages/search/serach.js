@@ -10,7 +10,10 @@ Page({
     inputValue: '',
     historySearch: [],
     serachProducts:[],
-    storeId: null
+    storeId: null,
+    isSearching: false,
+    hasResult: false,
+
   },
 
   handleInput: function (e) {
@@ -25,6 +28,9 @@ Page({
   },
   search: function () {
     const inputValue = this.data.inputValue;
+    this.setData({
+      isSearching: true
+    });
     if (inputValue.trim()!== '') {
       let historySearch = this.data.historySearch;
       if (historySearch.indexOf(inputValue) === -1) {
@@ -40,8 +46,7 @@ Page({
       // 这里添加实际搜索逻辑，如调用接口
       console.log('执行搜索，搜索词为：', inputValue);
       this.getProductListByStoreIdAndProductName(inputValue);
-
-    }
+    } 
   },
   clearHistory: function () {
     this.setData({
@@ -64,14 +69,22 @@ Page({
     success: (res) => {
       if (res.statusCode === 200) {
         const serachProducts = urlUtils.appendBaseUrlToImages(res.data);
-        console.log(serachProducts);
+        if(serachProducts.length<=0) {
+          this.setData({
+            hasResult: false
+          });
+        } else {
+          this.setData({
+            hasResult: true
+          });
+        }
         this.setData({
           serachProducts: serachProducts
         });
       }
     },
     fail: (err) => {
-      console.error('获取产品分类数据失败', err);
+      console.error('搜索产品数据失败', err);
     }
   });
 },
