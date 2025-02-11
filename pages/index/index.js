@@ -41,7 +41,8 @@ getBanners: function (storeId) {
       method: 'GET',
       success: (res) => {
         if (res.statusCode === 200) {
-          const banners = urlUtils.appendBaseUrlToImages(res.data);
+          const banners = res.data.data;
+          urlUtils.appendBaseUrlToImages(banners);
           this.setData({
             banners: banners
           });
@@ -60,10 +61,11 @@ getCategories: function (storeId) {
       method: 'GET',
       success: (res) => {
         if (res.statusCode === 200) {
-          const categories = urlUtils.appendBaseUrlToImages(res.data);
-          this.setData({
-            categories: categories
-          });
+            const categories = res.data.data;
+            urlUtils.appendBaseUrlToImages(categories);
+            this.setData({
+                categories: categories
+            });
         }
       },
       fail: (err) => {
@@ -79,7 +81,8 @@ getRecommendProducts: function (storeId) {
     method: 'GET',
     success: (res) => {
       if (res.statusCode === 200) {
-        const recommendProducts = urlUtils.appendBaseUrlToImages(res.data);
+        const recommendProducts = res.data.data;
+        urlUtils.appendBaseUrlToImages(recommendProducts);
         this.setData({
           recommendProducts: recommendProducts
         });

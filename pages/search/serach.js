@@ -44,7 +44,6 @@ Page({
         inputValue: ''
       });
       // 这里添加实际搜索逻辑，如调用接口
-      console.log('执行搜索，搜索词为：', inputValue);
       this.getProductListByStoreIdAndProductName(inputValue);
     } 
   },
@@ -68,19 +67,21 @@ Page({
     method: 'GET',
     success: (res) => {
       if (res.statusCode === 200) {
-        const serachProducts = urlUtils.appendBaseUrlToImages(res.data);
-        if(serachProducts.length<=0) {
-          this.setData({
-            hasResult: false
-          });
-        } else {
-          this.setData({
-            hasResult: true
-          });
-        }
-        this.setData({
-          serachProducts: serachProducts
-        });
+
+          const serachProducts = res.data.data;
+          urlUtils.appendBaseUrlToImages(serachProducts);
+            if(serachProducts.length<=0) {
+            this.setData({
+                hasResult: false
+            });
+            } else {
+            this.setData({
+                hasResult: true
+            });
+            }
+            this.setData({
+            serachProducts: serachProducts
+            });
       }
     },
     fail: (err) => {

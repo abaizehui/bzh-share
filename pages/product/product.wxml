@@ -21,11 +21,13 @@
   <view class="product-list">
     <block wx:for="{{productList}}" wx:key="id">
       <view class="product-item">
-        <image src="{{item.imageUrl}}" mode="aspectFill"></image>
+        <navigator class="product-navigator" url="/pages/detail/detail?productId={{item.id}}" open-type="navigate"> 
+            <image src="{{item.imageUrl}}" mode="aspectFill"></image>
         <view class="product-info">
           <view class="product-name">{{item.productName}}</view>
           <view class="product-price">￥{{item.productPrice}}</view>
         </view>
+        </navigator>
       </view>
     </block>
   </view>

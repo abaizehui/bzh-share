@@ -29,11 +29,15 @@
     <view class="serach-products" wx:if="{{serachProducts.length > 0}}">
         <view class="serach-product-list">
           <view class="serach-product-item" wx:for="{{serachProducts}}" wx:key="id">
-            <image class="serach-product-img" src="{{item.imageUrl}}" mode="aspectFill"></image>
+
+            <navigator class="serach-navigator" url="/pages/detail/detail?productId={{item.id}}" open-type="navigate"> 
+                <image class="serach-product-img" src="{{item.imageUrl}}" mode="aspectFill"></image>
             <view class="serach-product-info">
               <text class="serach-product-name">{{item.productName}}</text>
               <text class="serach-product-price">¥{{item.productPrice}}</text>
             </view>
+            </navigator>
+           
           </view>
         </view>
     </view>

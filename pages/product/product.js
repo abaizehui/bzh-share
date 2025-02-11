@@ -29,10 +29,11 @@ Page({
       method: 'GET',
       success: (res) => {
         if (res.statusCode === 200) {
-          const productList = urlUtils.appendBaseUrlToImages(res.data);
-          this.setData({
-            productList: productList
-          });
+            const productList = res.data.data;
+            urlUtils.appendBaseUrlToImages(productList);
+            this.setData({
+                productList: productList
+            });
         }
       },
       fail: (err) => {
@@ -57,10 +58,11 @@ Page({
       method: 'GET',
       success: (res) => {
         if (res.statusCode === 200) {
-          const productList = urlUtils.appendBaseUrlToImages(res.data);
-          this.setData({
-            productList: productList
-          });
+            const productList = res.data.data;
+            urlUtils.appendBaseUrlToImages(productList);
+            this.setData({
+                productList: productList
+            });
         }
       },
       fail: (err) => {
