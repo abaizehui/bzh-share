@@ -8,12 +8,13 @@
 </navigator>
   <!-- 分类导航栏 -->
   
-  <scroll-view class="tab-scroll" scroll-x="true" scroll-with-animation="true">
+  <view class="tab-scroll" scroll-x="true" scroll-with-animation="true">
     <view class="tab-item" wx:for="{{categoryList}}" wx:key="item.id" bindtap="switchTab" data-index="{{item.id}}" data-name="{{item.categoryName}}"
-      class="{{currentIndex === item.id? 'tab-item-active' : ''}}">
-      <text>{{item.categoryName}}</text>
+      class="{{currentIndex === item.id? 'tab-item-active' : 'tab-item'}}">
+        {{item.categoryName}}
     </view>
-  </scroll-view>
+  </view>
+
   <!-- 产品列表 -->
   <view class="category-products" wx:if="{{productList.length > 0}}">
         <view class="category-product-list">

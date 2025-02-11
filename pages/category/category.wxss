@@ -1,6 +1,5 @@
 .container {
   padding: 10px;
-
 }
 
 .search-container {
@@ -14,32 +13,45 @@
 }
 
 .tab-scroll {
+    display:flex;
   white-space: nowrap;
   overflow-x: scroll;
-  border-bottom: 1px solid #ccc;
+
   padding: 10rpx;
+  align-items: center;
+  margin: 10rpx 0;
+
 }
+
 .tab-item {
-  display: inline-block;
-  padding: 8px 16px;
+color: #666;
   cursor: pointer;
+  margin-right: 20rpx;
 }
 .tab-item-active {
-  color: red;
+    background-color: red;
+  color: #fff;
   border-bottom: 2px solid red;
+  border-radius: 35rpx;
+  padding: 4rpx 20rpx;
+  margin-right: 20rpx;
+
 }
 
 
 .category-product-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+
+  justify-content: space-between;
+
 }
 
 .category-product-item {
 
-  width: 49%;
-  margin-bottom: 4px;
+  width: 48%;
+  margin-bottom: 11px;
+
   border: 1px solid #ccc;
   border-radius: 10px;
   overflow: hidden;

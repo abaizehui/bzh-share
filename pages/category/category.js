@@ -11,17 +11,17 @@ Page({
   data: {
     categoryList: [],
     productList: [],
-    currentTab: 0
+    currentIndex: 0
   },
 
   switchTab: function (e) {
-    let index = e.currentTarget.dataset.index;
+    const index = e.currentTarget.dataset.index;
     this.setData({
-      currentTab: index
+      currentIndex: index
     });
-    // 这里可添加根据点击的分类过滤产品列表的逻辑，目前仅记录点击索引
+    this.getProductList(index);
+    // 这里可以添加根据选中项进行的其他业务逻辑，比如加载对应数据等
   },
-
 //获取产品类目
 getCategories: function (storeId) {
   wx.request({
@@ -30,7 +30,6 @@ getCategories: function (storeId) {
     success: (res) => {
       if (res.statusCode === 200) {
         const  categories =res.data.data;
-        console.log(categories);
         this.setData({
           categoryList: categories,
         });
@@ -53,8 +52,6 @@ getCategories: function (storeId) {
       success: (res) => {
         if (res.statusCode === 200) {
           const productList = urlUtils.appendBaseUrlToImages(res.data);
-          console.log(productList);
-
           this.setData({
             productList: productList
           });

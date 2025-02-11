@@ -65,7 +65,7 @@ page {
 .recommend-product-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 10rpx;
   background-color: #fff;
 
@@ -73,8 +73,8 @@ page {
 
 .recommend-product-item {
   border-radius: 15rpx;
-  width: 43%;
-  margin-bottom: 10rpx;
+  width: 42%;
+  margin-bottom: 30rpx;
   border: 1rpx solid #ccc;
   border-radius: 15rpx;
   padding: 20rpx;
