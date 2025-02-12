@@ -1,8 +1,6 @@
 const urlUtils = require('../../utils/urlUtils');
-
 const app = getApp();
 const baseUrl = app.globalData.apiBaseUrl;
-
 Page({
 
   /**
@@ -20,7 +18,6 @@ Page({
       currentIndex: index
     });
     this.getProductList(index);
-    // 这里可以添加根据选中项进行的其他业务逻辑，比如加载对应数据等
   },
 //获取产品类目
 getCategories: function (storeId) {
@@ -34,7 +31,6 @@ getCategories: function (storeId) {
           categoryList: categories,
         });
         this.getProductList(categories[0].id);
-
       }
     },
     fail: (err) => {
@@ -42,7 +38,6 @@ getCategories: function (storeId) {
     }
   });
 },
-
 
   //根据类目id获取商品列表
   getProductList: function (categoryId) {
@@ -52,10 +47,10 @@ getCategories: function (storeId) {
       success: (res) => {
         if (res.statusCode === 200) {
             const productList = res.data.data;
-           urlUtils.appendBaseUrlToImages(productList);
-          this.setData({
-            productList: productList
-          });
+            urlUtils.appendBaseUrlToImages(productList);
+            this.setData({
+                productList: productList
+            });
         }
       },
       fail: (err) => {
@@ -63,6 +58,7 @@ getCategories: function (storeId) {
       }
     });
   },
+  
   /**
    * 生命周期函数--监听页面加载
    */

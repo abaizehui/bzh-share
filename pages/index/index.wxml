@@ -7,7 +7,7 @@
     </block>
   </swiper>
 
-  <scroll-view class="category-scroll-container" scroll-x="true" style="white-space: nowrap;">
+  <scroll-view class="category-scroll-container" scroll-x="true"   style="white-space: nowrap">
   <block wx:for="{{categories}}" wx:key="id" >
     <view class="category-item">
       <view>

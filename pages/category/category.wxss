@@ -1,5 +1,5 @@
 .container {
-  padding: 10px;
+  padding: 15rpx;
 }
 
 .search-container {
@@ -12,53 +12,44 @@
   font-size: 30rpx;
 }
 
-.tab-scroll {
+.category-tab-scroll {
     display:flex;
-  white-space: nowrap;
-  overflow-x: scroll;
-
-  padding: 10rpx;
-  align-items: center;
-  margin: 10rpx 0;
-
+    white-space: nowrap;
+    overflow-x: scroll;
+    padding: 15rpx;
+    align-items: center;
+    margin: 10rpx 5rpx;
 }
 
-.tab-item {
-color: #666;
-  cursor: pointer;
-  margin-right: 20rpx;
+.category-tab-item {
+    color: #666;
+    cursor: pointer;
+    margin-right: 20rpx;
 }
-.tab-item-active {
+
+.category-tab-item-active {
     background-color: red;
-  color: #fff;
-  border-bottom: 2px solid red;
-  border-radius: 35rpx;
-  padding: 4rpx 20rpx;
-  margin-right: 20rpx;
+    color: #fff;
+    border-bottom: 1rpx solid red;
+    border-radius: 35rpx;
+    padding: 3rpx 15rpx;
+    margin-right: 20rpx;
 
 }
-
 
 .category-product-list {
   display: flex;
   flex-wrap: wrap;
-
   justify-content: space-between;
-
 }
 
 .category-product-item {
-
-  width: 48%;
-  margin-bottom: 11px;
-
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  width: 48.5%;
+  margin-bottom: 15rpx;
+  border: 1rpx solid #ccc;
+  border-radius: 15rpx;
   overflow: hidden;
   text-align: center;
-
-
-
 }
 .category-product-item image {
   width: 100%;

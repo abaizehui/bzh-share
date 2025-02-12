@@ -2,7 +2,6 @@ const urlUtils = require('../../utils/urlUtils');
 const app = getApp();
 const baseUrl = app.globalData.apiBaseUrl;
 
-
 Page({
 
   /**
@@ -11,7 +10,6 @@ Page({
   data: {
     productInfo: {},
     showModal: false
-
   },
 
   /**
@@ -49,8 +47,6 @@ getProductById: function (productId) {
         this.setData({
             productInfo: productInfo
           });
-          console.log(productInfo);
-
       }.bind(this),
       fail: function (err) {
         console.log('接口请求失败', err);
