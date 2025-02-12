@@ -6,18 +6,30 @@
   </view>
 
   <view class="product-parameter-info">
-    <view class="parameter-box" bindtap="toggleDropdown">
-      <view class="parameter-label">参数</view>
-      <view class="parameter-content">
-        <view wx:if="{{isDropdownVisible}}" class="dropdown-container">
-          <view class="dropdown-item" wx:for="{{productInfo.productParamList}}" wx:key="*this">
-            <view class="item-label">{{item.paramName}}</view>
-            <view class="item-value">{{item.paramValue}}</view>
-          </view>
+    <button bindtap="showPopup">参数</button>
+    <view class="popup" hidden="{{!isPopupVisible}}">
+      <view class="popup-content" scroll-y="true" scroll-with-animation="true">
+        <view class="close-btn" bindtap="hidePopup">×</view>
+        <view class="info-item" wx:for="{{productInfo.productParamList}}" wx:key="*this">
+              <view class="item-label">{{item.paramName}}</view>
+              <view class="item-value">{{item.paramValue}}</view>
         </view>
       </view>
     </view>
   </view>
 
+   <!-- 产品详情 -->
+   <view class="product-detail">
+        <view class="detail-title">产品详情</view>
+        <view class="detail-item" wx:for="{{productInfo.reviews}}" wx:key="index">
+            <view class="detail-image">{{item.userName}}</view>
+            <image src="{{item.imageUrl}}" mode="widthFix"></image>
+
+        </view>
+    </view>
+
+
+
 
 </view>
+
