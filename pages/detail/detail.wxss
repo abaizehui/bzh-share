@@ -1,78 +1,78 @@
 .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 20rpx;
+ 
+    background-color: #f5f5f5;
+
+
   }
   
   .product-img {
     width: 100%;
-    height: 400rpx;
+    height: 700rpx;
     object-fit: contain;
   }
   
   .product-info {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 25rpx;
+    padding: 20rpx 40rpx;
+    border-radius: 20rpx;
+    background-color: #fff;
   }
   
   .product-name {
-    font-size: 32rpx;
-    font-weight: bold;
-    margin-top: 20rpx;
+    font-size: 35rpx;
+    font-family: Arial, sans-serif;
+    color: rgb(20, 20, 20);
   }
   
   .product-price {
-    font-size: 36rpx;
     color: red;
-    margin-top: 10rpx;
+    margin-top: 15rpx;
+    font-size: 37rpx;
   }
-  
-  .member-info {
+
+    
+  .product-parameter-info {
+
+
+    margin: 35rpx;
+    padding: 20rpx 40rpx;
+    border-radius: 20rpx;
+    background-color: #fff;
+  }
+ 
+  .parameter-box {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-top: 10rpx;
-    background-color: #f5f5f5;
-    padding: 10rpx 20rpx;
+    border: 1px solid #ccc;
     border-radius: 5rpx;
+    padding: 15rpx;
+    margin-bottom: 20rpx;
   }
-  
-  .more-info {
-    color: #1aad19;
+  .parameter-label {
+    width: 80rpx;
   }
-  
-  .select-info {
-    margin-top: 20rpx;
-  }
-  
-  .select-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10rpx;
-    padding-bottom: 10rpx;
-    border-bottom: 1rpx solid #ccc;
-  }
-  
-  .evaluation {
-    margin-top: 20rpx;
-  }
-  
-  .action-buttons {
-    display: flex;
-    width: 100%;
-    margin-top: 30rpx;
-  }
-  
-  .add-cart {
+  .parameter-content {
     flex: 1;
-    margin-right: 20rpx;
-    background-color: #ffc107;
-    color: white;
   }
-  
-  .buy-now {
-    flex: 1;
-    background-color: #ff4500;
-    color: white;
+  .dropdown-container {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 5rpx 5rpx;
+  }
+  .dropdown-item {
+    display: flex;
+    justify-content: space - between;
+    padding: 15rpx;
+    border-bottom: 1px solid #ccc;
+  }
+  .item-label {
+    font-weight: normal;
+  }
+  .item-value {
+    text-align: right;
   }
