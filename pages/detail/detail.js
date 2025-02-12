@@ -10,7 +10,8 @@ Page({
    */
   data: {
     productInfo: {},
-    isPopupVisible: false
+    showModal: false
+
   },
 
   /**
@@ -18,6 +19,20 @@ Page({
    */
   onLoad(options) {
     this.getProductById(options.productId);
+  },
+
+  // 显示弹窗
+  showModal() {
+    this.setData({
+      showModal: true
+    })
+  },
+
+  // 隐藏弹窗
+  hideModal() {
+    this.setData({
+      showModal: false
+    })
   },
 
   // 获取产品详情
@@ -40,17 +55,6 @@ getProductById: function (productId) {
       fail: function (err) {
         console.log('接口请求失败', err);
       }
-    });
-  },
-
-  showPopup: function() {
-    this.setData({
-      isPopupVisible: true
-    });
-  },
-  hidePopup: function() {
-    this.setData({
-      isPopupVisible: false
     });
   },
 

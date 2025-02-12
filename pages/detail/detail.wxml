@@ -6,23 +6,39 @@
   </view>
 
   <view class="product-parameter-info">
-    <button bindtap="showPopup">参数</button>
-    <view class="popup" hidden="{{!isPopupVisible}}">
-      <view class="popup-content" scroll-y="true" scroll-with-animation="true">
-        <view class="close-btn" bindtap="hidePopup">×</view>
-        <view class="info-item" wx:for="{{productInfo.productParamList}}" wx:key="*this">
+        <!-- 触发按钮 -->
+    <view class="btn" bindtap="showModal">
+ 
+    <view >参数：</view>
+        <view class="btn-param">
+            <view class="btn-param-item" wx:for="{{productInfo.productParamList}}" wx:key="*this">
+                {{item.paramName}}
+            </view>
+        </view>
+    </view>
+
+
+    <!-- 遮罩层 -->
+    <view class="mask" wx:if="{{showModal}}" bindtap="hideModal"></view>
+
+    <!-- 弹窗内容 -->
+    <view class="modal-container" wx:if="{{showModal}}">
+    <view class="modal-content">
+        <!-- 自定义内容 -->
+        <view class="info-item" wx:for="{{productInfo.productParamList}}" wx:key="id">
               <view class="item-label">{{item.paramName}}</view>
               <view class="item-value">{{item.paramValue}}</view>
         </view>
-      </view>
+        <view class="modal-item" bindtap="hideModal">取消</view>
     </view>
+    </view>
+
   </view>
 
    <!-- 产品详情 -->
    <view class="product-detail">
         <view class="detail-title">图文详情</view>
-        <view class="detail-item" wx:for="{{productInfo.productDetailImages}}" wx:key="index">
-
+        <view class="detail-item" wx:for="{{productInfo.productDetailImages}}" wx:key="id">
             <image src="{{item.imageUrl}}" mode="widthFix"></image>
         </view>
     </view>
