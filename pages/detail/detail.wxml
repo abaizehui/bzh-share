@@ -20,15 +20,12 @@
 
    <!-- 产品详情 -->
    <view class="product-detail">
-        <view class="detail-title">产品详情</view>
-        <view class="detail-item" wx:for="{{productInfo.reviews}}" wx:key="index">
-            <view class="detail-image">{{item.userName}}</view>
-            <image src="{{item.imageUrl}}" mode="widthFix"></image>
+        <view class="detail-title">图文详情</view>
+        <view class="detail-item" wx:for="{{productInfo.productDetailImages}}" wx:key="index">
 
+            <image src="{{item.imageUrl}}" mode="widthFix"></image>
         </view>
     </view>
-
-
 
 
 </view>

@@ -51,7 +51,8 @@ getCategories: function (storeId) {
       method: 'GET',
       success: (res) => {
         if (res.statusCode === 200) {
-          const productList = urlUtils.appendBaseUrlToImages(res.data);
+            const productList = res.data.data;
+           urlUtils.appendBaseUrlToImages(productList);
           this.setData({
             productList: productList
           });

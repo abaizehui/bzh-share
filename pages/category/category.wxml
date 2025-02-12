@@ -19,11 +19,13 @@
   <view class="category-products" wx:if="{{productList.length > 0}}">
         <view class="category-product-list">
           <view class="category-product-item" wx:for="{{productList}}" wx:key="id">
-            <image class="category-product-img" src="{{item.imageUrl}}" mode="aspectFill"></image>
-            <view class="category-product-info">
-              <text class="category-product-name">{{item.productName}}</text>
-              <text class="category-product-price">¥{{item.productPrice}}</text>
-            </view>
+            <navigator class="search-navigator" url="/pages/detail/detail?productId={{item.id}}" open-type="navigate"> 
+                <image class="category-product-img" src="{{item.imageUrl}}" mode="aspectFill"></image>
+                <view class="category-product-info">
+                <text class="category-product-name">{{item.productName}}</text>
+                <text class="category-product-price">¥{{item.productPrice}}</text>
+                </view>
+            </navigator>    
           </view>
         </view>
     </view>
