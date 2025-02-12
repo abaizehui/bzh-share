@@ -10,7 +10,7 @@ Page({
    */
   data: {
     productInfo: {},
-    isDropdownVisible: false,
+    isPopupVisible: false
   },
 
   /**
@@ -43,9 +43,14 @@ getProductById: function (productId) {
     });
   },
 
-  toggleDropdown: function () {
+  showPopup: function() {
     this.setData({
-      isDropdownVisible:!this.data.isDropdownVisible
+      isPopupVisible: true
+    });
+  },
+  hidePopup: function() {
+    this.setData({
+      isPopupVisible: false
     });
   },
 
