@@ -9,7 +9,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    productInfo: {}
+    productInfo: {},
+    isDropdownVisible: false,
   },
 
   /**
@@ -33,11 +34,18 @@ getProductById: function (productId) {
         this.setData({
             productInfo: productInfo
           });
+          console.log(productInfo);
 
       }.bind(this),
       fail: function (err) {
         console.log('接口请求失败', err);
       }
+    });
+  },
+
+  toggleDropdown: function () {
+    this.setData({
+      isDropdownVisible:!this.data.isDropdownVisible
     });
   },
 
