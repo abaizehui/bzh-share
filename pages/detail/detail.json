@@ -1,5 +1,6 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "产品详情"
+  "navigationBarTitleText": "产品详情",
+  "enableShareTimeline": true
 
 }

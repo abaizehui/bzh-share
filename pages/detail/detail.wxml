@@ -8,13 +8,12 @@
   <view class="parameter-info">
         <!-- 触发按钮 -->
     <view class="parameter-btn-info" bindtap="showModal">
-    <view >参数：</view>
-        <view class="parameter-btn">
-            <view class="parameter-btn-item" wx:for="{{productInfo.productParamList}}" wx:key="id">
-                {{item.paramName}},
-            </view>
-        </view>
+        <view >参数：</view>
+        <view class="parameter-btn-item">
+            <text wx:for="{{productInfo.productParamList}}" wx:key="item">   {{item.paramName}}</text>
+         </view>
     </view>
+
     <!-- 遮罩层 -->
     <view class="parameter-mask" wx:if="{{showModal}}" bindtap="hideModal"></view>
 
