@@ -33,6 +33,12 @@ Page({
     })
   },
 
+  reserveProduct: function () {
+    wx.navigateTo({
+      url: '/pages/share/share' 
+    });
+  },
+
   // 获取产品详情
 getProductById: function (productId) {
     wx.request({
@@ -99,21 +105,32 @@ getProductById: function (productId) {
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage() {
-
-    return {
-        title : '运城英伦罗孚厨电',
-        path: '/pages/index/index'
-
+  onShareAppMessage(res) {
+    if(res.from === 'button'){
+        const productInfo = this.data.productInfo;
+        const img = productInfo.imageUrl;
+        return {
+            title : productInfo.productName,
+            path: '/pages/detail/detail?productId=' + productInfo.id,
+            imageUrl : img
+        }
+    } else {
+        return {
+            title : '运城英伦罗孚厨电',
+            path: '/pages/index/index'
+        }
     }
   },
-    // 分享到朋友圈
+
+// 分享到朋友圈
 onShareTimeline() {
+    const productInfo = this.data.productInfo;
+    const img = productInfo.imageUrl;
     return {
-       title: '运城英伦罗孚厨电', // 分享标题
-       imageUrl: '../../icon/share/share.png' // 分享海报图片链接
+       title : productInfo.productName,
+       path: '/pages/detail/detail?productId=' + productInfo.id,
+       imageUrl : img
      };
 },
 
- 
 })

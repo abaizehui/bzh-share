@@ -1,42 +1,53 @@
 <view class="container">
-  <image class="product-img" src="{{productInfo.imageUrl}}" />
-  <view class="product-info">
-    <text class="product-name">{{productInfo.productName}}</text>
-    <text class="product-price">￥{{productInfo.productPrice}}</text>
-  </view>
+    <view class="product-main">
+        <image class="product-img" src="{{productInfo.imageUrl}}" />
+        <view class="product-info">
+            <text class="product-name">{{productInfo.productName}}</text>
+            <text class="product-price">￥{{productInfo.productPrice}}</text>
+        </view>
 
-  <view class="parameter-info">
-        <!-- 触发按钮 -->
-    <view class="parameter-btn-info" bindtap="showModal">
-        <view >参数：</view>
-        <view class="parameter-btn-item">
-            <text wx:for="{{productInfo.productParamList}}" wx:key="item">   {{item.paramName}}</text>
-         </view>
-    </view>
-
-    <!-- 遮罩层 -->
-    <view class="parameter-mask" wx:if="{{showModal}}" bindtap="hideModal"></view>
-
-    <!-- 弹窗内容 -->
-    <view class="parameter-modal-container" wx:if="{{showModal}}">
-        <view class="parameter-modal-content">
-            <!-- 自定义内容 -->
-            <view class="parameter-modal-item" wx:for="{{productInfo.productParamList}}" wx:key="id">
-                <view class="parameter-item-label">{{item.paramName}}</view>
-                <view class="parameter-item-value">{{item.paramValue}}</view>
+        <view class="parameter-info">
+                <!-- 触发按钮 -->
+            <view class="parameter-btn-info" bindtap="showModal">
+                <view >参数：</view>
+                <view class="parameter-btn-item">
+                    <text wx:for="{{productInfo.productParamList}}" wx:key="item">   {{item.paramName}}</text>
+                </view>
             </view>
-            <view class="modal-item-cancel" bindtap="hideModal">取消</view>
-        </view>
-    </view>
-  </view>
 
-   <!-- 产品详情 -->
-   <view class="product-detail">
-        <view class="product-detail-title">图文详情</view>
-        <view class="product-detail-item" wx:for="{{productInfo.productDetailImages}}" wx:key="id">
-            <image src="{{item.imageUrl}}" mode="widthFix"></image>
+            <!-- 遮罩层 -->
+            <view class="parameter-mask" wx:if="{{showModal}}" bindtap="hideModal"></view>
+
+            <!-- 弹窗内容 -->
+            <view class="parameter-modal-container" wx:if="{{showModal}}">
+                <view class="parameter-modal-content">
+                    <!-- 自定义内容 -->
+                    <view class="parameter-modal-item" wx:for="{{productInfo.productParamList}}" wx:key="id">
+                        <view class="parameter-item-label">{{item.paramName}}</view>
+                        <view class="parameter-item-value">{{item.paramValue}}</view>
+                    </view>
+                    <view class="modal-item-cancel" bindtap="hideModal">取消</view>
+                </view>
+            </view>
         </view>
+
+        <!-- 产品详情 -->
+        <view class="product-detail">
+                <view class="product-detail-item" wx:for="{{productInfo.productDetailImages}}" wx:key="id">
+                    <image src="{{item.imageUrl}}" mode="widthFix"></image>
+                </view>
+            </view>
     </view>
+    <!-- 底部固定按钮区域 -->
+    <view class="product-bar">
+        <view class="share">
+            <button class="share-button"  open-type="share">
+                <image src="../../icon/share/share.png" mode="widthFix"></image>
+                <view class="share-text">分享</view>
+            </button>
+        </view>
+        <view class="reserve-button" bindtap="reserveProduct">预约享好礼</view>
+  </view>
 
 
 </view>

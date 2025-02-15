@@ -1,5 +1,5 @@
 <view class="container">
-  <swiper class="banner-swiper" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <swiper class="banner-swiper" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}"> 
     <block wx:for="{{banners}}" wx:key="id">
       <swiper-item>
         <image src="{{item.imageUrl}}" mode="widthFix"></image>
@@ -20,7 +20,7 @@
   </block>
 </scroll-view>
   <view class="recommend-products">
-    <view class="recommend-section-title">热销机型</view>
+    <view class="recommend-section-title">热门产品</view>
       <view class="recommend-product-list">
         <view class="recommend-product-item" wx:for="{{recommendProducts}}" wx:key="id">
             <navigator class="recommend-navigator" url="/pages/detail/detail?productId={{item.id}}" open-type="navigate"> 

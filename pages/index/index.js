@@ -10,7 +10,8 @@ Page({
     recommendProducts: [],
     autoplay: true, // 开启自动轮播
     interval: 3000, // 轮播间隔时间，单位为毫秒，这里设置为3秒
-    duration: 1000 // 滑动动画时长，单位为毫秒，这里设置为1秒
+    duration: 1000, // 滑动动画时长，单位为毫秒，这里设置为1秒
+    circular: true,
   },
   onLoad: function () {
     this.getStore();
@@ -30,8 +31,8 @@ onShareAppMessage() {
   // 分享到朋友圈
 onShareTimeline() {
     return {
-       title: '运城英伦罗孚厨电', // 分享标题
-       imageUrl: '../../icon/share/share.png' // 分享海报图片链接
+       title: '润鑫厨电', // 分享标题
+       path: '/pages/index/index'
      };
 },
 

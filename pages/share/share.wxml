@@ -1,0 +1,21 @@
+<view class="container">
+    <image class="img" src="../../image/share.jpg" mode="widthFix"></image>
+    <image class="img" src="../../image/share.jpg" mode="widthFix"></image>
+
+   <!-- 底部固定区域 -->
+   <view class="modal-container">
+  <view class="modal-content">
+    <view class="modal-tips">请填写联系信息，我们将尽快与您联系</view>
+    <view class="form-item">
+      <input type="text" placeholder="请填写您的姓名" bindinput="inputName"/>
+    </view>
+
+    <view class="form-item">
+      <input type="number" placeholder="请填写您的手机号" bindinput="inputPhone"/>
+      <button class="authorize-button" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">一键授权</button>
+    </view>
+    <view class="submit-button" bindtap="submitForm">立即领劵 锁定权益</view>
+  </view>
+</view>
+
+</view>
