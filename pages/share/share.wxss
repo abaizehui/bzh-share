@@ -17,25 +17,25 @@
   
   .modal-content {
     background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
+    padding: 40rpx;
+    border-radius: 10rpx;
     width: 100%;
   }
   
   .modal-tips {
     text-align: center;
-    margin-bottom: 20px;
-    font-size: 14px;
+    margin-bottom: 30rpx;
+    font-size: 27rpx;
     color: #666;
   }
   
   .form-item {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    padding: 10px;
+    margin-bottom: 25rpx;
+    border: 2rpx solid #e0e0e0;
+    border-radius: 10rpx;
+    padding: 18rpx;
   }
   
   .form-item input {
@@ -49,15 +49,15 @@
   
   .authorize-button {
     color: #070707;
-    font-size: 14px;
+    font-size: 28rpx;
   }
   
   .submit-button {
     background-color: rgb(155, 20, 20);
     color: #fff;
     text-align: center;
-    padding: 15px;
-    border-radius: 5px;
-    font-size: 16px;
+    padding: 30rpx;
+    border-radius: 10rpx;
+    font-size: 30rpx;
     cursor: pointer;
   }

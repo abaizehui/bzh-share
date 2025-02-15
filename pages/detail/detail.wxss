@@ -146,11 +146,11 @@
   }
   
   .share-button image {
-    width: 40rpx;
+    width: 45rpx;
   }
   
   .share-text {
-    font-size: 25rpx;
+    font-size: 23rpx;
   }
   
   .reserve-button {
@@ -161,7 +161,7 @@
     color: #fff;
     border-radius: 15rpx;
     width: 400rpx;
-    height: 80rpx;
+    height: 90rpx;
     font-size: 29rpx;
     padding: 10 20rpx;
   }
