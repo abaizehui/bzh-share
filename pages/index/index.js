@@ -23,7 +23,7 @@ onShareAppMessage() {
 
     return {
         title : '运城英伦罗孚厨电',
-        path: '/pages/index/index.wxml'
+        path: '/pages/index/index'
     }
 },
 

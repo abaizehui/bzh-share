@@ -37,6 +37,11 @@
 
 }
 
+.category-navigator {
+    background-color: transparent;
+}
+
+
 .category-product-list {
   display: flex;
   flex-wrap: wrap;

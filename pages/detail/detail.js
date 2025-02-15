@@ -103,7 +103,8 @@ getProductById: function (productId) {
 
     return {
         title : '运城英伦罗孚厨电',
-        path: '/pages/index/index.wxml'
+        path: '/pages/index/index'
+
     }
   },
     // 分享到朋友圈

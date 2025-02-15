@@ -66,10 +66,14 @@
 
 }
 
+.product-navigator {
+    background-color: transparent;
+}
+
 .product-item {
   border-radius: 15rpx;
-  width: 43%;
-  margin-bottom: 20rpx;
+  width: 43.5%;
+  margin-bottom: 15rpx;
   border: 1rpx solid #ccc;
   border-radius: 15rpx;
   padding: 18rpx;
