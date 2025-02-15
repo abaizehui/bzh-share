@@ -43,10 +43,6 @@
       }
     ]
   },
-  "permission": {
-    "scope.userPhoneNumber": {
-      "desc": "用于完善会员资料，为您提供更好的服务"
-    }
-  },
+  
   "sitemapLocation": "sitemap.json"
 }

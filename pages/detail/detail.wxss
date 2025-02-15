@@ -150,7 +150,7 @@
   }
   
   .share-text {
-    font-size: 27rpx;
+    font-size: 25rpx;
   }
   
   .reserve-button {
@@ -161,7 +161,7 @@
     color: #fff;
     border-radius: 15rpx;
     width: 400rpx;
-    height: 100rpx;
-    font-size: 30rpx;
-    padding: 0 20rpx;
+    height: 80rpx;
+    font-size: 29rpx;
+    padding: 10 20rpx;
   }
