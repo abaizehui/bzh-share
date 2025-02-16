@@ -147,7 +147,10 @@
     align-items: center;
     background-color: transparent; /* 背景透明 */
     margin-left: 30rpx;
-    
+  }
+
+  button[plain]{
+      border: 0;
   }
   
   .share-button image {
