@@ -35,7 +35,7 @@ Page({
 
   reserveProduct: function () {
     wx.navigateTo({
-      url: '/pages/share/share' 
+      url: '/pages/share/share?productId='+this.data.productInfo.id 
     });
   },
 
@@ -130,7 +130,7 @@ onShareTimeline() {
        title : productInfo.productName,
        path: '/pages/detail/detail?productId=' + productInfo.id,
        imageUrl : img
-     };
+    };
 },
 
 })

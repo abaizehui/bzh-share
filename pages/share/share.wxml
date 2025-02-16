@@ -11,10 +11,10 @@
     </view>
 
     <view class="form-item">
-      <input type="number" placeholder="请填写您的手机号" bindinput="inputPhone"/>
+      <input type="number" placeholder="请填写您的手机号" bindinput="inputPhone"  value="{{phone}}" />
       <button class="authorize-button" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">一键授权</button>
     </view>
-    <view class="submit-button" bindtap="submitForm">立即领劵 锁定权益</view>
+    <view class="submit-button" bindtap="submitForm">立即预约 锁定权益</view>
   </view>
 </view>
 
