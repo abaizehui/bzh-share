@@ -36,7 +36,10 @@
                 <view class="product-detail-item" wx:for="{{productInfo.productDetailImages}}" wx:key="id">
                     <image src="{{item.imageUrl}}" mode="widthFix"></image>
                 </view>
-            </view>
+        </view>
+        <view class="product-blank">
+               
+        </view>
     </view>
     <!-- 底部固定按钮区域 -->
     <view class="product-bar">
