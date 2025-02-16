@@ -46,6 +46,12 @@
                 <view class="share-text">分享</view>
             </button>
         </view>
+        <view class="contoct">
+            <button class="contoct-button"  open-type="contact">
+                <image src="../../icon/share/contoct.png" mode="widthFix"></image>
+                <view class="contoct-text">客服</view>
+            </button>
+        </view>
         <view class="reserve-button" bindtap="reserveProduct">预约享好礼</view>
   </view>
 

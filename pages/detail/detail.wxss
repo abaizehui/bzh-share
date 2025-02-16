@@ -132,7 +132,7 @@
     bottom: 0;
     position: fixed;
     justify-content: space-around;
-    padding: 20rpx 20rpx;
+    padding: 30rpx 20rpx;
     background-color: #fff;
     width: 100%;
   }
@@ -153,6 +153,24 @@
     font-size: 23rpx;
   }
   
+
+
+  .contoct-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent; /* 背景透明 */
+    margin-right: 10rpx;
+  }
+  
+  .contoct-button image {
+    width: 45rpx;
+  }
+  
+  .contoct-text {
+    font-size: 23rpx;
+  }
+
   .reserve-button {
     display: flex;
     justify-content: center;
@@ -163,5 +181,6 @@
     width: 400rpx;
     height: 90rpx;
     font-size: 29rpx;
-    padding: 10 20rpx;
+    padding: 0 20rpx;
+    margin-right: 30rpx;
   }
