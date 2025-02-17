@@ -100,7 +100,7 @@
 
 .serach-product-item {
   width: 48%;
-  margin-bottom: 15rpx;
+  margin-bottom: 13rpx;
   border: 1rpx solid #ccc;
   border-radius: 15rpx;
   text-align: center;

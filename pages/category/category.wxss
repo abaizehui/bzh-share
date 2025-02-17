@@ -49,8 +49,8 @@
 }
 
 .category-product-item {
-  width: 48.5%;
-  margin-bottom: 15rpx;
+  width: 49%;
+  margin-bottom: 13rpx;
   border: 1rpx solid #ccc;
   border-radius: 15rpx;
   overflow: hidden;
