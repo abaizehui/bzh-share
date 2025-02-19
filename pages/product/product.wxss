@@ -2,14 +2,21 @@
   padding: 20rpx;
 }
 
+.search-icon {
+    padding: 10rpx;
+
+}
+  
+
 .search-container {
   display: flex;
   align-items: center;
   background-color: #f0f0f0;
   border-radius: 35rpx;
   padding: 0 280rpx;
-  height: 68rpx;
-  font-size: 30rpx;
+  height: 70rpx;
+  font-size: 35rpx;
+
 }
 
 .tab-container {
