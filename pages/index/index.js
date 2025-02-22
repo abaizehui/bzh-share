@@ -8,6 +8,7 @@ Page({
     banners: [],
     categories: [],
     recommendProducts: [],
+    storeInfo : null,
     autoplay: true, // 开启自动轮播
     interval: 3000, // 轮播间隔时间，单位为毫秒，这里设置为3秒
     duration: 1000, // 滑动动画时长，单位为毫秒，这里设置为1秒
@@ -42,6 +43,11 @@ getStore: function () {
       url: baseUrl+ '/wx/store/getStoreByAppId?appId=' +appId,
       method: 'GET',
       success: function (res) {
+          const storeInfo = res.data.data;
+          storeInfo.imageUrl = urlUtils.appendBaseUrlToImage(storeInfo.imageUrl);
+          this.setData({
+            storeInfo: storeInfo
+          });
           wx.setStorageSync('storeId', res.data.data.id);
           this.getBanners(res.data.data.id);
           this.getCategories(res.data.data.id);

@@ -1,4 +1,5 @@
 page {
+
   background-color: #fff;
 
 }
@@ -31,7 +32,7 @@ page {
   box-sizing: border-box;
   padding: 15rpx;
   width: 25%;
-  margin-bottom: 5rpx;
+  margin-bottom: 10rpx;
 }
 
 .category-navigator {
@@ -55,16 +56,61 @@ page {
   color: rgb(20, 20, 20);
 }
 
+.look-section {
+    display: flex;
+    align-items: center;
+    margin-top: 50rpx;
+    margin-bottom: 20rpx;
+
+}
+
+.look-section-title {
+    font-size: 35rpx;
+    margin-left: 5rpx;
+    font-weight: bold;
+}
+
+.look-section-img {
+    width: 40rpx;
+    height: 40rpx;
+    margin-left: 20rpx;
+}
+
+
+.look-store {
+    text-align: center;
+    margin-bottom: 50rpx;
+
+}
+
+.look-store-img {
+    width: 98%;
+    height: 350rpx;
+    margin-bottom: 10rpx;
+    border-radius: 20rpx;
+}
+
 .recommend-products {
   margin-bottom: 20rpx;
 }
 
+.recommend-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20rpx;
+    font-weight: bold;
+
+}
+
 .recommend-section-title {
-  font-size:35rpx;
-  font-weight: bold;
-  padding: 30rpx;
-  margin-top: 20rpx; /* 增加上边距 */
-  margin-left: 30rpx;
+    font-size: 35rpx;
+    margin-left: 5rpx;
+}
+
+.recommend-section-img {
+    width: 40rpx;
+    height: 40rpx;
+    margin-left: 20rpx;
 }
 
 .recommend-product-list {

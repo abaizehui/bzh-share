@@ -17,7 +17,7 @@
   align-items: center;
   background-color: #f0f0f0; 
 
-  height: 70rpx;
+  height: 60rpx;
   border-radius: 40rpx;
   padding-left: 30rpx;
   padding-right: 10rpx;
@@ -26,10 +26,8 @@
 
 .search-input {
   flex: 1;
-  height: 80rpx;
   border: none;
-  background: transparent;
-  font-size: 32rpx;
+  font-size: 30rpx;
 }
 
 .clear-button {

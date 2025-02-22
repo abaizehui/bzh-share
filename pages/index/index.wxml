@@ -19,8 +19,24 @@
     </view>
   </block>
 </scroll-view>
+
+<view class="look-section">
+    <image class="look-section-img" src="../../icon/index/popular.png"></image>
+    <view class="look-section-title">进店看一看</view>
+</view>
+<view class="look-store">
+
+    <navigator  url="/pages/stroe/store" open-type="navigate"> 
+        <image class="look-store-img" src="{{storeInfo.imageUrl}}" mode="aspectFill"></image>
+    </navigator>
+</view>
+
+
   <view class="recommend-products">
-    <view class="recommend-section-title">热门产品</view>
+    <view class="recommend-section">
+        <image class="recommend-section-img" src="../../icon/index/popular.png"></image>
+        <view class="recommend-section-title">热门产品</view>
+    </view>
       <view class="recommend-product-list">
         <view class="recommend-product-item" wx:for="{{recommendProducts}}" wx:key="id">
             <navigator class="recommend-navigator" url="/pages/detail/detail?productId={{item.id}}" open-type="navigate"> 

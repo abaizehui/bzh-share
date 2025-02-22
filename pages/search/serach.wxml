@@ -3,7 +3,7 @@
   <!-- 搜索栏 -->
   <view class="search-container">
     <view class="search-input-box">
-        <input class="search-input" type="text" value="{{inputValue}}" bindinput="handleInput" />
+        <input class="search-input" type="text"  placeholder="搜索产品或感兴趣的内容"  value="{{inputValue}}" bindinput="handleInput" />
         <view class="clear-button" wx:if="{{inputValue.length > 0}}" bindtap="clearInput">
             <icon type="clear"></icon>
         </view>

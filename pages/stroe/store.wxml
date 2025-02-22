@@ -1,0 +1,20 @@
+<view class="container">
+ <!-- 门店展示区域 -->
+ <image class="store-img" src="{{storeInfo.imageUrl}}" mode="aspectFill"></image>
+  <view class="store-info">
+    <view class="store-name">{{storeInfo.storeName}}</view>
+    <view class="store-details">
+      <view class="store-time-info">
+        <image class="icon" src="../../icon/store/time.png"></image>
+        <view class="store-time">营业时间：{{storeInfo.businessHours}}</view>
+      </view>
+      <view class="store-adress-info">
+        <image class="icon" src="../../icon/store/adress.png"></image>
+        <view class="store-adress">{{storeInfo.address}}</view>
+      </view>
+    </view>
+  </view>
+
+
+
+</view>

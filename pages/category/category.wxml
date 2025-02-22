@@ -2,7 +2,7 @@
     <!-- 搜索栏 -->
     <navigator class="search-navigator" url="/pages/search/serach" open-type="navigate"> 
         <view class="search-container">
-            <icon type="search" class="search-icon"></icon>
+            <image  class="search-icon" src="../../icon/serach/serach.png"></image> 
             <input placeholder="搜索" class="search-input" disabled></input>
         </view>
     </navigator>
