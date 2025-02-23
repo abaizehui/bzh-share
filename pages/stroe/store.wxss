@@ -1,31 +1,41 @@
 .container {
-    background-color: #fff;
-
+    background-color: #f0f0f0;
 }
 .store-img {
     width: 100%;
 }
 .store-info {
-    border-radius: 30rpx;
+    margin-top: 20rpx;
 }
 
 .store-name{
-    font-size: 40rpx;
+    font-size: 38rpx;
     font-weight: bold;
-    margin-left: 70rpx;
-    margin-top: 50rpx;  
+    margin-left: 40rpx;
+    margin-top: 40rpx;  
+
 }
 
 .store-details {
-    margin-left: 50rpx;
+    margin-left: 40rpx;
     margin-top: 30rpx;  
-    font-size: 35rpx;
+    font-size: 30rpx;
+    color: #515151;
+    height: 140rpx;
 
+}
+
+
+.icon{
+    width: 30rpx;
+    height: 30rpx;
 }
 
 .store-time-info {
     display: flex;
-    margin-bottom: 30rpx;
+    margin-bottom: 20rpx;
+    align-items: center;
+
 }
 
 .store-time {
@@ -34,6 +44,8 @@
 
 .store-adress-info {
     display: flex;
+    align-items: center;
+
 }
 
 .store-adress {
@@ -41,8 +53,4 @@
 }
 
 
-.icon{
-    width: 38rpx;
-    height: 38rpx;
-}
 
