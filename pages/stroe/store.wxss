@@ -1,30 +1,36 @@
 .container {
-    background-color: #f0f0f0;
+    background-color: #fff;
+    width: 100%;
+}
+.store-show {
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中，若图片不需要垂直居中可省略 */
+    display: flex;
+
 }
 .store-img {
     width: 100%;
-}
-.store-info {
-    margin-top: 20rpx;
+
 }
 
 .store-name{
     font-size: 38rpx;
     font-weight: bold;
     margin-left: 40rpx;
-    margin-top: 40rpx;  
-
+}
+.store-info {
+    width: 100%;
+    height: 80vh;
+    background-color: #f1f7fc;
+    padding: 30rpx 0;
+    border-radius: 30rpx;
 }
 
 .store-details {
-    margin-left: 40rpx;
-    margin-top: 30rpx;  
     font-size: 30rpx;
-    color: #515151;
-    height: 140rpx;
-
+    color: #515151;    
+    padding: 30rpx 40rpx;
 }
-
 
 .icon{
     width: 30rpx;
@@ -33,9 +39,8 @@
 
 .store-time-info {
     display: flex;
-    margin-bottom: 20rpx;
+    margin-bottom: 30rpx;
     align-items: center;
-
 }
 
 .store-time {
@@ -45,12 +50,52 @@
 .store-adress-info {
     display: flex;
     align-items: center;
-
 }
 
 .store-adress {
     margin-left: 10rpx;
 }
+
+.contoct-options{
+    display: flex;
+    padding: 10rpx 10rpx;
+}
+
+.contoct-button-consult {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1rpx solid #e0e0e0;
+    border-radius: 15rpx; /* 添加圆角使边框看起来更柔和 */
+    box-shadow: 0 2rpx 5rpx rgba(0, 0, 0, 0.1); /* 可添加阴影增强立体感 */
+}
+
+  .contoct-button-phone {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1rpx solid #e0e0e0;
+    border-radius: 15rpx; /* 添加圆角使边框看起来更柔和 */
+    box-shadow: 0 2rpx 5rpx rgba(0, 0, 0, 0.1); /* 可添加阴影增强立体感 */
+    margin-right: 200rpx;
+  }
+  
+  .contoct-button-consult image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+  }
+  .contoct-button-phone image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+  }
+  
+  .contoct-text {
+    font-size: 30rpx;
+  }
+
+
 
 
 

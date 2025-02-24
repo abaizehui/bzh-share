@@ -10,6 +10,7 @@ Page({
    */
   data: {
     storeInfo : null,
+    phoneNumber : null
   },
 
 
@@ -22,8 +23,10 @@ getStore: function () {
           const storeInfo = res.data.data;
           storeInfo.imageUrl = urlUtils.appendBaseUrlToImage(storeInfo.imageUrl);
           this.setData({
-            storeInfo: storeInfo
+            storeInfo: storeInfo,
+            phoneNumber: storeInfo.tel
           });
+          console.log(storeInfo);
 
       }.bind(this),
       fail: function (err) {
@@ -31,6 +34,15 @@ getStore: function () {
       }
     });
   },
+
+
+// 电话沟通
+phoneCall: function () {
+    wx.makePhoneCall({
+        phoneNumber: this.data.phoneNumber
+      })
+},
+
 
   /**
    * 生命周期函数--监听页面加载

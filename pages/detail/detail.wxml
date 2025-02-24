@@ -26,7 +26,7 @@
                         <view class="parameter-item-label">{{item.paramName}}</view>
                         <view class="parameter-item-value">{{item.paramValue}}</view>
                     </view>
-                    <view class="modal-item-cancel" bindtap="hideModal">取消</view>
+                    <view class="modal-item-cancel" bindtap="hideModal">完成</view>
                 </view>
             </view>
         </view>

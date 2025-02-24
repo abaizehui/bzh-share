@@ -1,6 +1,10 @@
 <view class="container">
  <!-- 门店展示区域 -->
- <image class="store-img" src="{{storeInfo.imageUrl}}" mode="aspectFill"></image>
+   <view class="store-show">
+    <image class="store-img" src="{{storeInfo.imageUrl}}" mode="aspectFill"></image>
+  </view>
+
+ <!-- 经销商信息区域 -->
   <view class="store-info">
     <view class="store-name">{{storeInfo.storeName}}</view>
     <view class="store-details">
@@ -13,6 +17,18 @@
         <view class="store-adress">{{storeInfo.address}}</view>
       </view>
     </view>
+
+    <view class="contoct-options">
+      <button class="contoct-button-consult"  plain="true" open-type="contact">
+        <image src="../../icon/store/consult.png" mode="widthFix"></image>
+        <view class="contoct-text">在线咨询</view>
+      </button>
+      <button class="contoct-button-phone" plain="true"   bindtap="phoneCall">
+        <image src="../../icon/store/phone.png" mode="widthFix"></image>
+        <view class="contoct-text">电话沟通</view>
+      </button>
+    </view>
+
   </view>
 
 
