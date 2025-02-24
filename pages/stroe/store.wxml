@@ -15,6 +15,10 @@
       <view class="store-adress-info">
         <image class="icon" src="../../icon/store/adress.png"></image>
         <view class="store-adress">{{storeInfo.address}}</view>
+        <view class="store-adress-navigation"  bindtap="navigateToMap">
+            <image class="icon" src="../../icon/store/navigation.png"></image>
+            <view class="store-adress-navigation-text">导航</view>
+        </view>
       </view>
     </view>
 
@@ -28,8 +32,9 @@
         <view class="contoct-text">电话沟通</view>
       </button>
     </view>
-
   </view>
+
+  
 
 
 

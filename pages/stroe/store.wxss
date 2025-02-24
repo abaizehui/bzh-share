@@ -56,6 +56,23 @@
     margin-left: 10rpx;
 }
 
+.store-adress-navigation {
+    right: 60rpx;
+    position: absolute;
+    width: 130rpx;
+    height: 60rpx;
+    background: linear-gradient(to bottom right, #0D47A1, #00BCD4); /* 渐变色背景 */
+    border-radius: 10rpx; /* 圆角 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rpx; /* 图标和文字间距 */
+}
+
+.store-adress-navigation-text{
+    color: #fff;
+}
+
 .contoct-options{
     display: flex;
     padding: 10rpx 10rpx;
@@ -81,14 +98,14 @@
   }
   
   .contoct-button-consult image {
-    width: 40rpx;
-    height: 40rpx;
-    margin-right: 20rpx;
+    width: 35rpx;
+    height: 35rpx;
+    margin-right: 10rpx;
   }
   .contoct-button-phone image {
-    width: 40rpx;
-    height: 40rpx;
-    margin-right: 20rpx;
+    width: 35rpx;
+    height: 35rpx;
+    margin-right: 10rpx;
   }
   
   .contoct-text {
