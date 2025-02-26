@@ -47,11 +47,11 @@ phoneCall: function () {
 navigateToMap: function () {
 
     wx.openLocation({
-        latitude: 35.047841, // 目标地点纬度，需替换为实际值
-        longitude: 111.023023, // 目标地点经度，需替换为实际值
+        latitude: 35.048308000000006, // 目标地点纬度，需替换为实际值
+        longitude: 111.02225599999997, // 目标地点经度，需替换为实际值
         name: '大明宫建材家居', // 目的地名称，可自定义
         address: '山西省运城市大明宫建材家居(禹都店)', // 详细地址，可自定义
-        scale: 18 // 缩放级别，范围 5 - 18
+        scale: 5 // 缩放级别，范围 5 - 18
       });
 },
 
@@ -108,6 +108,17 @@ navigateToMap: function () {
    * 用户点击右上角分享
    */
   onShareAppMessage() {
+    return {
+        title: '运城英伦罗孚', // 分享标题
+        path: '/pages/stroe/store'
+      };
+  },
 
-  }
+    // 分享到朋友圈
+    onShareTimeline() {
+        return {
+        title: '运城英伦罗孚', // 分享标题
+        path: '/pages/stroe/stroe'
+        };
+    },
 })

@@ -32,6 +32,10 @@
         <view class="contoct-text">电话沟通</view>
       </button>
     </view>
+    <view class="store-car">
+        <image class="store-car-img" src="../../icon/index/car.jpg" mode="aspectFill"></image>
+    </view> 
+    
   </view>
 
   

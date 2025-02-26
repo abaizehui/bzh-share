@@ -59,14 +59,14 @@
 .store-adress-navigation {
     right: 60rpx;
     position: absolute;
-    width: 130rpx;
-    height: 60rpx;
+    width: 135rpx;
+    height: 70rpx;
     background: linear-gradient(to bottom right, #0D47A1, #00BCD4); /* 渐变色背景 */
     border-radius: 10rpx; /* 圆角 */
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8rpx; /* 图标和文字间距 */
+    gap: 10rpx; /* 图标和文字间距 */
 }
 
 .store-adress-navigation-text{
@@ -94,7 +94,7 @@
     border: 1rpx solid #e0e0e0;
     border-radius: 15rpx; /* 添加圆角使边框看起来更柔和 */
     box-shadow: 0 2rpx 5rpx rgba(0, 0, 0, 0.1); /* 可添加阴影增强立体感 */
-    margin-right: 200rpx;
+    margin-right: 250rpx;
   }
   
   .contoct-button-consult image {
@@ -112,6 +112,18 @@
     font-size: 30rpx;
   }
 
+  .store-car {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30rpx 10rpx;
+}
+
+  .store-car-img {
+    width: 96%;
+    height: 350rpx;
+    border-radius: 15rpx;
+  }
 
 
 

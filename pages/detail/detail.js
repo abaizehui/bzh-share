@@ -116,7 +116,7 @@ getProductById: function (productId) {
         }
     } else {
         return {
-            title : '运城英伦罗孚厨电',
+            title : '运城英伦罗孚',
             path: '/pages/index/index'
         }
     }
