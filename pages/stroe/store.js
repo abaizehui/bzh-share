@@ -10,7 +10,13 @@ Page({
    */
   data: {
     storeInfo : null,
-    phoneNumber : null
+    phoneNumber : null,
+    recommendProducts: [],
+    qrcodeUrl:'../../icon/index/car.jpg',
+    showModal: false,
+    name: '',
+    phone: '',
+
   },
 
 
@@ -24,9 +30,10 @@ getStore: function () {
           storeInfo.imageUrl = urlUtils.appendBaseUrlToImage(storeInfo.imageUrl);
           this.setData({
             storeInfo: storeInfo,
-            phoneNumber: storeInfo.tel
+            phoneNumber: storeInfo.tel,
+            storeId: storeInfo.id
           });
-          console.log(storeInfo);
+          this.getRecommendProducts(res.data.data.id);
 
       }.bind(this),
       fail: function (err) {
@@ -35,6 +42,26 @@ getStore: function () {
     });
   },
 
+
+  //获取推荐商品
+getRecommendProducts: function (storeId) {
+    wx.request({
+      url: baseUrl+ '/wx/product/getRecommendProductListByStoreId?storeId=' + storeId, 
+      method: 'GET',
+      success: (res) => {
+        if (res.statusCode === 200) {
+          const recommendProducts = res.data.data;
+          urlUtils.appendBaseUrlToImages(recommendProducts);
+          this.setData({
+            recommendProducts: recommendProducts
+          });
+        }
+      },
+      fail: (err) => {
+        console.error('获取产品分类数据失败', err);
+      }
+    });
+  },
 
 // 电话沟通
 phoneCall: function () {
@@ -54,6 +81,113 @@ navigateToMap: function () {
         scale: 5 // 缩放级别，范围 5 - 18
       });
 },
+
+  // 显示弹窗
+  showModal() {
+    this.setData({
+      showModal: true
+    })
+  },
+
+  // 隐藏弹窗
+  hideModal() {
+    this.setData({
+      showModal: false
+    })
+  },
+
+
+  inputName: function (e) {
+    this.setData({
+      name: e.detail.value
+    });
+  },
+
+  inputPhone: function (e) {
+    this.setData({
+      phone: e.detail.value
+    });
+  },
+
+  getPhoneNumber (e) {
+    if (e.detail.errMsg === 'getPhoneNumber:ok') {
+      // 用户同意授权，可以通过 e.detail.code 向服务器请求手机号
+        const phoneSync = wx.getStorageSync('phone')
+        if (phoneSync ===  ''){
+            wx.request({
+                url: baseUrl+ '/wx/share/getPhoneNumber?code=' +e.detail.code,
+                method: 'GET',
+                success: function (res) {
+                    const phone = res.data.msg;
+                    wx.setStorageSync('phone', phone);
+                    this.setData({
+                        phone: phone
+                    });
+                }.bind(this),
+                fail: function (err) {
+                console.log('接口请求失败', err);
+                }
+            });
+        } else {
+            this.setData({
+                phone: phoneSync
+            });
+        }
+    } else {
+      // 用户拒绝授权或发生错误
+      console.error('获取手机号失败', e.detail.errMsg);
+    }
+  },
+
+  submitForm: function () {
+    const {name, phone} = this.data;
+    if (!name ||!phone) {
+        wx.showToast({
+            title: '姓名和手机号必填',
+            icon: 'none'
+        });
+        return;
+    }
+    if (phone.length != 11) {
+        wx.showToast({
+            title: '请填写正确的手机号',
+            icon: 'none'
+        });
+        return;
+    }
+    const submitPhone = wx.getStorageSync('submitPhone');
+    if (submitPhone != '' && submitPhone === this.data.phone) {
+        wx.showToast({
+            title: '已预约成功',
+            icon: 'none'
+        });
+        this.setData({
+            showModal: false
+          })
+        return;
+    }
+  
+    // 提交表单逻辑
+    wx.request({
+        url: baseUrl+ '/wx/share/submit?name=' +this.data.name+'&phone='+this.data.phone,
+        method: 'GET',
+        success: function (res) {
+              // 提交成功后，恢复按钮可点击状态
+            wx.showToast({
+                title: '预约成功',
+                icon: 'none'
+            });
+            this.setData({
+                showModal: false
+              })
+            wx.setStorageSync('submitPhone',this.data.phone);
+        }.bind(this),
+        fail: function (err) {
+            console.log('接口请求失败', err);
+        }
+    });
+  },
+
 
   /**
    * 生命周期函数--监听页面加载

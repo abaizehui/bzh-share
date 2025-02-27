@@ -45,7 +45,7 @@
                     <text class="recommend-product-name">{{item.productName}}</text>
                     <text class="recommend-product-price">¥{{item.productPrice}}</text>
                 </view>
-        </navigator>
+            </navigator>
         </view>
       </view>
   </view>

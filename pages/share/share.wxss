@@ -53,7 +53,7 @@
   }
   
   .submit-button {
-    background-color: rgb(155, 20, 20);
+    background-color: #156dca;
     color: #fff;
     text-align: center;
     padding: 30rpx;
