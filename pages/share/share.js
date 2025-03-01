@@ -6,11 +6,26 @@ Page({
    * 页面的初始数据
    */
   data: {
+    productId:'',
     name: '',
     phone: '',
-    productId:''
   },
   
+
+  // 显示弹窗
+  showModal() {
+    this.setData({
+      showModal: true
+    })
+  },
+
+  // 隐藏弹窗
+  hideModal() {
+    this.setData({
+      showModal: false
+    })
+  },
+
 
   inputName: function (e) {
     this.setData({
@@ -70,18 +85,9 @@ Page({
         });
         return;
     }
-    const submitPhone = wx.getStorageSync('submitPhone');
-    if (submitPhone != '' && submitPhone === this.data.phone) {
-        wx.showToast({
-            title: '已预约成功',
-            icon: 'none'
-        });
-        return;
-    }
-  
     // 提交表单逻辑
     wx.request({
-        url: baseUrl+ '/wx/share/submit?name=' +this.data.name+'&phone='+this.data.phone+'&productId='+this.data.productId,
+        url: baseUrl+ '/wx/share/submit?name=' +this.data.name+'&phone='+this.data.phone,
         method: 'GET',
         success: function (res) {
               // 提交成功后，恢复按钮可点击状态
@@ -89,7 +95,11 @@ Page({
                 title: '预约成功',
                 icon: 'none'
             });
+            this.setData({
+                showModal: false
+              })
             wx.setStorageSync('submitPhone',this.data.phone);
+            wx.setStorageSync('submitName',this.data.name);
         }.bind(this),
         fail: function (err) {
             console.log('接口请求失败', err);
@@ -97,12 +107,16 @@ Page({
     });
   },
 
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    const phone = wx.getStorageSync('submitPhone');
+    const name = wx.getStorageSync('submitName');
     this.setData({
-        phone: wx.getStorageSync('phone'),
+        phone: phone,
+        name: name,
         productId: options.productId
     })
   },

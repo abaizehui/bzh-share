@@ -6,7 +6,70 @@
 
 .img {
     width: 100%;
+    margin-bottom: 150rpx;
 }
+
+
+.store-reservation-bar {
+    display: flex;
+    bottom: 0;
+    position: fixed;
+    padding: 25rpx 25rpx;
+    background-color: #f1f7fc;
+    width: 100%;
+  }
+
+  .store-reservation {
+    background-color: #156dca;
+    color: #fff;
+    border-radius: 20rpx;
+    font-size: 30rpx;
+    padding: 25rpx 220rpx;
+  }
+
+
+  /* 遮罩层 */
+.store-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+  
+
+  /* 弹窗容器 */
+.store-modal-container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+  
+  /* 弹窗内容 */
+.store-modal-content {
+    background: white;
+    border-radius: 24rpx 24rpx 0 0;
+    padding:  40rpx 40rpx;
+    transform: translateY(0);
+    animation: slideUp 0.3s;
+}
+
+
+  /* 动画 */
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
 
 .modal-container {
     position: fixed;

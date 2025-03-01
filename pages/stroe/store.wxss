@@ -126,7 +126,7 @@
   }
   
   .recommend-section-title {
-      font-size: 38rpx;
+      font-size: 35rpx;
       margin-left: 40rpx;
       font-weight: bold;
       margin-top: 10rpx;
@@ -195,8 +195,8 @@
     background-color: #156dca;
     color: #fff;
     border-radius: 20rpx;
-    font-size: 35rpx;
-    padding: 30rpx 270rpx;
+    font-size: 30rpx;
+    padding: 25rpx 250rpx;
   }
 
 
@@ -226,7 +226,7 @@
 .store-modal-content {
     background: white;
     border-radius: 24rpx 24rpx 0 0;
-    padding: 30rpx;
+    padding:  25rpx 25rpx;
     transform: translateY(0);
     animation: slideUp 0.3s;
 }

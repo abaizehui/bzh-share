@@ -14,7 +14,7 @@
       </view>
       <view class="store-adress-info">
         <image class="icon" src="../../icon/store/adress.png"></image>
-        <view class="store-adress">{{storeInfo.address}}</view>
+        <view class="store-adress">{{storeInfo.addressName}}</view>
         <view class="store-adress-navigation"  bindtap="navigateToMap">
             <image class="icon" src="../../icon/store/navigation.png"></image>
             <view class="store-adress-navigation-text">导航</view>
@@ -60,7 +60,7 @@
 
     <!-- 底部固定按钮区域 -->
     <view class="store-reservation-bar">
-            <view class="store-reservation" bindtap="showModal">预约到店</view>
+            <view class="store-reservation" bindtap="showModal">预约到店领好礼</view>
     </view>
 
         <!-- 遮罩层 -->
@@ -72,7 +72,7 @@
             <view class="store-modal-content">
                 <view class="modal-tips">请填写联系信息，我们将尽快与您联系</view>
                 <view class="form-item">
-                <input type="text" placeholder="请填写您的姓名" bindinput="inputName"/>
+                <input type="text" placeholder="请填写您的姓名" bindinput="inputName" value="{{name}}"/>
                 </view>
                 <view class="form-item">
                 <input type="number" placeholder="请填写您的手机号" bindinput="inputPhone"  value="{{phone}}" />

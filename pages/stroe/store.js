@@ -12,11 +12,14 @@ Page({
     storeInfo : null,
     phoneNumber : null,
     recommendProducts: [],
-    qrcodeUrl:'../../icon/index/car.jpg',
+    qrcodeUrl: null,
     showModal: false,
     name: '',
     phone: '',
-
+    latitude: null,
+    longitude: null,
+    addressName: '',
+    address: ''
   },
 
 
@@ -28,10 +31,16 @@ getStore: function () {
       success: function (res) {
           const storeInfo = res.data.data;
           storeInfo.imageUrl = urlUtils.appendBaseUrlToImage(storeInfo.imageUrl);
+          storeInfo.carUrl = urlUtils.appendBaseUrlToImage(storeInfo.carUrl);
           this.setData({
             storeInfo: storeInfo,
             phoneNumber: storeInfo.tel,
-            storeId: storeInfo.id
+            storeId: storeInfo.id,
+            qrcodeUrl:storeInfo.carUrl,
+            latitude: storeInfo.latitude,// 目标地点纬度，需替换为实际值
+            longitude: storeInfo.longitude, // 目标地点经度，需替换为实际值
+            addressName: storeInfo.addressName, // 目的地名称，可自定义
+            address: storeInfo.address, // 详细地址，可自定义
           });
           this.getRecommendProducts(res.data.data.id);
 
@@ -74,10 +83,10 @@ phoneCall: function () {
 navigateToMap: function () {
 
     wx.openLocation({
-        latitude: 35.048308000000006, // 目标地点纬度，需替换为实际值
-        longitude: 111.02225599999997, // 目标地点经度，需替换为实际值
-        name: '大明宫建材家居', // 目的地名称，可自定义
-        address: '山西省运城市大明宫建材家居(禹都店)', // 详细地址，可自定义
+        latitude: this.data.latitude,// 目标地点纬度，需替换为实际值
+        longitude: this.data.longitude, // 目标地点经度，需替换为实际值
+        name: this.data.addressName, // 目的地名称，可自定义
+        address: this.data.address, // 详细地址，可自定义
         scale: 5 // 缩放级别，范围 5 - 18
       });
 },
@@ -155,18 +164,6 @@ navigateToMap: function () {
         });
         return;
     }
-    const submitPhone = wx.getStorageSync('submitPhone');
-    if (submitPhone != '' && submitPhone === this.data.phone) {
-        wx.showToast({
-            title: '已预约成功',
-            icon: 'none'
-        });
-        this.setData({
-            showModal: false
-          })
-        return;
-    }
-  
     // 提交表单逻辑
     wx.request({
         url: baseUrl+ '/wx/share/submit?name=' +this.data.name+'&phone='+this.data.phone,
@@ -181,6 +178,7 @@ navigateToMap: function () {
                 showModal: false
               })
             wx.setStorageSync('submitPhone',this.data.phone);
+            wx.setStorageSync('submitName',this.data.name);
         }.bind(this),
         fail: function (err) {
             console.log('接口请求失败', err);
@@ -194,6 +192,12 @@ navigateToMap: function () {
    */
   onLoad() {
     this.getStore();
+    const phone = wx.getStorageSync('submitPhone');
+    const name = wx.getStorageSync('submitName');
+    this.setData({
+        phone: phone,
+        name: name
+    })
   },
 
   /**
