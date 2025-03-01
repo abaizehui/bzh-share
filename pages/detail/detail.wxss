@@ -41,15 +41,23 @@
 /* 触发按钮样式 */
 .parameter-btn-info {
     display: flex;
-    white-space: nowrap
+    white-space: nowrap;
+    justify-content: space-between; /* 新增，让标题和箭头分别在两端 */
+
 }
+.parameter-arrow {
+    width: 40rpx;
+    height: 40rpx;
+  }
 
 .parameter-btn-item {
     overflow: hidden; 
     text-overflow: ellipsis; 
     white-space: nowrap;
+    width: 95%;
+
 }
-  
+
   /* 遮罩层 */
 .parameter-mask {
     position: fixed;
@@ -86,7 +94,85 @@
     display: flex;
     justify-content: space-between;
   }
- 
+
+  .parameter-item-label {
+    color: #666;
+    margin-left: 10rpx;
+}
+
+.parameter-item-value {
+    width: 40%;
+    margin-right: 10rpx;
+}
+
+
+/* 触发按钮样式 */
+.config-btn-info {
+    display: flex;
+    white-space: nowrap;
+    margin-top: 30rpx;
+    justify-content: space-between; /* 新增，让标题和箭头分别在两端 */
+}
+  
+
+.config-btn-item {
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+    width: 80%
+}
+
+.config-arrow {
+    width: 40rpx;
+    height: 40rpx;
+  }
+
+
+  /* 遮罩层 */
+.config-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+  
+  /* 弹窗容器 */
+.config-modal-container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+  
+  /* 弹窗内容 */
+.config-modal-content {
+    background: white;
+    border-radius: 24rpx 24rpx 0 0;
+    padding: 30rpx;
+    transform: translateY(0);
+    animation: slideUp 0.3s;
+}
+
+
+.config-modal-item {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .config-item-label {
+    color: #666;
+    margin-left: 10rpx;
+}
+.config-item-value {
+    width: 75%;
+    margin-right: 10rpx;
+}
+
   
   /* 选项样式 */
 .modal-item-cancel {
@@ -101,10 +187,6 @@
     color: #666;
 }
   
-.parameter-item-label {
-    color: #666;
-}
-
   /* 动画 */
   @keyframes slideUp {
     from {

@@ -9,7 +9,8 @@ Page({
    */
   data: {
     productInfo: {},
-    showModal: false
+    showModal: false,
+    showConfigModal: false
   },
 
   /**
@@ -33,6 +34,21 @@ Page({
     })
   },
 
+
+  // 显示弹窗
+  showConfigModal() {
+    this.setData({
+      showConfigModal: true
+    })
+  },
+
+  // 隐藏弹窗
+  hideConfigModal() {
+    this.setData({
+      showConfigModal: false
+    })
+  },
+
   reserveProduct: function () {
     wx.navigateTo({
       url: '/pages/share/share?productId='+this.data.productInfo.id 
@@ -50,6 +66,7 @@ getProductById: function (productId) {
         productInfo.imageUrl = urlUtils.appendBaseUrlToImage(productInfo.imageUrl);
 
         urlUtils.appendBaseUrlToImages(productInfo.productDetailImages);
+        console.log(productInfo);
         this.setData({
             productInfo: productInfo
           });
