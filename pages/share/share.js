@@ -1,14 +1,16 @@
 const app = getApp();
 const baseUrl = app.globalData.apiBaseUrl;
+const appId = app.globalData.appId;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    productId:'',
+    productId:null,
     name: '',
     phone: '',
+    storeId:null
   },
   
 
@@ -87,7 +89,7 @@ Page({
     }
     // 提交表单逻辑
     wx.request({
-        url: baseUrl+ '/wx/share/submit?name=' +this.data.name+'&phone='+this.data.phone,
+        url: baseUrl+ '/wx/share/submit?storeId='+this.data.storeId+'&name=' +this.data.name+'&phone='+this.data.phone+'&productId='+this.data.productId,
         method: 'GET',
         success: function (res) {
               // 提交成功后，恢复按钮可点击状态
@@ -108,10 +110,29 @@ Page({
   },
 
 
+// 获取门店信息
+getStore: function () {
+    wx.request({
+      url: baseUrl+ '/wx/store/getStoreByAppId?appId=' +appId,
+      method: 'GET',
+      success: function (res) {
+          this.setData({
+            storeId: res.data.data.id
+          });
+          wx.setStorageSync('storeId', res.data.data.id);
+      }.bind(this),
+      fail: function (err) {
+        console.log('接口请求失败', err);
+      }
+    });
+  },
+
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    this.getStore();
     const phone = wx.getStorageSync('submitPhone');
     const name = wx.getStorageSync('submitName');
     this.setData({
