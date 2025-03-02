@@ -66,7 +66,6 @@ getProductById: function (productId) {
         productInfo.imageUrl = urlUtils.appendBaseUrlToImage(productInfo.imageUrl);
 
         urlUtils.appendBaseUrlToImages(productInfo.productDetailImages);
-        console.log(productInfo);
         this.setData({
             productInfo: productInfo
           });
@@ -133,7 +132,7 @@ getProductById: function (productId) {
         }
     } else {
         return {
-            title : '运城英伦罗孚',
+            title : '运城英伦罗孚厨电',
             path: '/pages/index/index'
         }
     }

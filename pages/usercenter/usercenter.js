@@ -69,7 +69,7 @@ Page({
   // 分享到朋友圈
 onShareTimeline() {
     return {
-       title: '润鑫厨电', // 分享标题
+       title: '运城英伦罗孚厨电', // 分享标题
        path: '/pages/index/index'
      };
 },
