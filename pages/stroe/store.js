@@ -20,7 +20,9 @@ Page({
     latitude: null,
     longitude: null,
     addressName: '',
-    address: ''
+    address: '',
+    corpId:'',
+    extInfo:''
   },
 
 
@@ -42,6 +44,8 @@ getStore: function () {
             longitude: storeInfo.longitude, // 目标地点经度，需替换为实际值
             addressName: storeInfo.addressName, // 目的地名称，可自定义
             address: storeInfo.address, // 详细地址，可自定义
+            corpId:storeInfo.corpId,
+            extInfo:storeInfo.extInfo
           });
           this.getRecommendProducts(res.data.data.id);
 
@@ -72,6 +76,19 @@ getRecommendProducts: function (storeId) {
       }
     });
   },
+
+
+// 在线客服
+consult: function () {
+    wx.openCustomerServiceChat({
+        extInfo: {url: this.data.extInfo},
+        corpId: this.data.corpId,
+        success(res) {
+
+        }
+      })
+},
+
 
 // 电话沟通
 phoneCall: function () {

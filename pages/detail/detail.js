@@ -1,6 +1,7 @@
 const urlUtils = require('../../utils/urlUtils');
 const app = getApp();
 const baseUrl = app.globalData.apiBaseUrl;
+const appId = app.globalData.appId;
 
 Page({
 
@@ -10,13 +11,16 @@ Page({
   data: {
     productInfo: {},
     showModal: false,
-    showConfigModal: false
+    showConfigModal: false,
+    corpId:'',
+    extInfo:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    this.getStore();
     this.getProductById(options.productId);
   },
 
@@ -75,6 +79,39 @@ getProductById: function (productId) {
       }
     });
   },
+
+
+// 获取门店信息
+getStore: function () {
+    wx.request({
+      url: baseUrl+ '/wx/store/getStoreByAppId?appId=' +appId,
+      method: 'GET',
+      success: function (res) {
+          const storeInfo = res.data.data;
+          this.setData({
+            corpId:storeInfo.corpId,
+            extInfo:storeInfo.extInfo
+          });
+      }.bind(this),
+      fail: function (err) {
+        console.log('接口请求失败', err);
+      }
+    });
+  },
+
+// 在线客服
+consult: function () {
+    console.log(this.data.extInfo);
+
+    wx.openCustomerServiceChat({
+        extInfo: {url: this.data.extInfo},
+        corpId: this.data.corpId,
+        success(res) {
+
+        }
+      })
+},
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

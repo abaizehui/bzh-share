@@ -74,7 +74,7 @@
             </button>
         </view>
         <view class="contoct">
-            <button class="contoct-button"  plain="true" open-type="contact">
+            <button class="contoct-button"  plain="true"  bindtap="consult">
                 <image src="../../icon/share/contoct.png" mode="widthFix"></image>
                 <view class="contoct-text">客服</view>
             </button>

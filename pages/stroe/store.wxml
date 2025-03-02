@@ -23,7 +23,7 @@
     </view>
 
     <view class="contoct-options">
-      <button class="contoct-button-consult"  plain="true" open-type="contact">
+      <button class="contoct-button-consult"  plain="true"  bindtap="consult">
         <image src="../../icon/store/consult.png" mode="widthFix"></image>
         <view class="contoct-text">在线咨询</view>
       </button>
