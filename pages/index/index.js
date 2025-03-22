@@ -44,11 +44,12 @@ getStore: function () {
       method: 'GET',
       success: function (res) {
           const storeInfo = res.data.data;
+          wx.setStorageSync('storeId', storeInfo.id);
+          wx.setStorageSync('storeInfo', storeInfo);
           storeInfo.imageUrl = urlUtils.appendBaseUrlToImage(storeInfo.imageUrl);
           this.setData({
             storeInfo: storeInfo
           });
-          wx.setStorageSync('storeId', res.data.data.id);
           this.getBanners(res.data.data.id);
           this.getCategories(res.data.data.id);
           this.getRecommendProducts(res.data.data.id);

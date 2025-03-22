@@ -6,11 +6,12 @@
     justify-content: center; /* 水平居中 */
     align-items: center; /* 垂直居中，若图片不需要垂直居中可省略 */
     display: flex;
-
 }
 .store-img {
-    width: 100%;
-
+    width: 98%;
+    height: 380rpx;
+    padding: 10rpx;
+    background-color: #f1f7fc;
 }
 
 .store-name{

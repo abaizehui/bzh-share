@@ -88,6 +88,8 @@ getStore: function () {
       method: 'GET',
       success: function (res) {
           const storeInfo = res.data.data;
+          wx.setStorageSync('storeId', storeInfo.id);
+          wx.setStorageSync('storeInfo', storeInfo);
           this.setData({
             corpId:storeInfo.corpId,
             extInfo:storeInfo.extInfo
@@ -101,14 +103,9 @@ getStore: function () {
 
 // 在线客服
 consult: function () {
-    console.log(this.data.extInfo);
-
     wx.openCustomerServiceChat({
         extInfo: {url: this.data.extInfo},
         corpId: this.data.corpId,
-        success(res) {
-
-        }
       })
 },
 

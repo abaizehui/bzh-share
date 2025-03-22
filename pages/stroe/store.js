@@ -83,9 +83,6 @@ consult: function () {
     wx.openCustomerServiceChat({
         extInfo: {url: this.data.extInfo},
         corpId: this.data.corpId,
-        success(res) {
-
-        }
       })
 },
 
@@ -142,7 +139,7 @@ navigateToMap: function () {
         const phoneSync = wx.getStorageSync('phone')
         if (phoneSync ===  ''){
             wx.request({
-                url: baseUrl+ '/wx/share/getPhoneNumber?code=' +e.detail.code,
+                url: baseUrl+ '/wx/api/getPhoneNumber?code=' +e.detail.code,
                 method: 'GET',
                 success: function (res) {
                     const phone = res.data.msg;
@@ -194,8 +191,7 @@ navigateToMap: function () {
             });
             this.setData({
                 showModal: false
-              })
-            wx.setStorageSync('submitPhone',this.data.phone);
+            })
             wx.setStorageSync('submitName',this.data.name);
         }.bind(this),
         fail: function (err) {
@@ -210,7 +206,7 @@ navigateToMap: function () {
    */
   onLoad() {
     this.getStore();
-    const phone = wx.getStorageSync('submitPhone');
+    const phone = wx.getStorageSync('phone');
     const name = wx.getStorageSync('submitName');
     this.setData({
         phone: phone,

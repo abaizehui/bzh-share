@@ -47,7 +47,7 @@ Page({
         const phoneSync = wx.getStorageSync('phone')
         if (phoneSync ===  ''){
             wx.request({
-                url: baseUrl+ '/wx/share/getPhoneNumber?code=' +e.detail.code,
+                url: baseUrl+ '/wx/api/getPhoneNumber?code=' +e.detail.code,
                 method: 'GET',
                 success: function (res) {
                     const phone = res.data.msg;

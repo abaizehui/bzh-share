@@ -1,0 +1,38 @@
+
+.reservation-product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.reservation-product-item {
+  width: 49%;
+  margin-bottom: 13rpx;
+  border: 1rpx solid #ccc;
+  border-radius: 15rpx;
+  overflow: hidden;
+  text-align: center;
+}
+.reservation-product-item image {
+  width: 100%;
+  height: 340rpx;
+}
+
+.reservation-product-info {
+  padding: 10rpx;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rpx;
+}
+
+.reservation-product-name {
+  font-size: 27rpx;
+  font-family: Arial, sans-serif;
+  color: rgb(20, 20, 20);
+}
+
+.reservation-product-price {
+  color: red;
+  margin-top: 6rpx;
+  font-size: 27rpx;
+}

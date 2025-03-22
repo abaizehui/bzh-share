@@ -1,0 +1,13 @@
+<view class="reservation-products" wx:if="{{productList.length > 0}}">
+        <view class="reservation-product-list">
+          <view class="reservation-product-item" wx:for="{{productList}}" wx:key="id">
+            <navigator class="reservation-navigator" url="/pages/detail/detail?productId={{item.id}}" open-type="navigate"> 
+                <image class="reservation-product-img" src="{{item.imageUrl}}" mode="aspectFill"></image>
+                <view class="reservation-product-info">
+                <text class="reservation-product-name">{{item.productName}}</text>
+                <text class="reservation-product-price">¥{{item.productPrice}}</text>
+                </view>
+            </navigator>    
+          </view>
+        </view>
+    </view>

@@ -8,7 +8,9 @@
     "pages/search/serach",
     "pages/detail/detail",
     "pages/share/share",
-    "pages/stroe/store"
+    "pages/stroe/store",
+    "pages/login/login",
+    "pages/reservation/reservation"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -45,5 +47,5 @@
     ]
   },
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading":"requiredComponents"
+  "lazyCodeLoading": "requiredComponents"
 }

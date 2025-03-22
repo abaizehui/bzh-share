@@ -1,0 +1,53 @@
+<view class="container">
+
+  <!-- 顶部登录区域 -->
+  <view class="top-login">
+    <view class="login-bg">
+      <navigator class="login-navigator" url="/pages/login/login" open-type="navigate" wx:if="{{isLogin===false}}" > 
+            <image class="login-icon" src="../../image/avatar.jpg" mode="widthFix"></image>
+          <view class="login-btn" >立即登录 > </view>
+        </navigator>
+        <view class="login-navigator" wx:if="{{isLogin===true}}"  >
+          <image class="login-icon" src="{{avatarUrl}}" mode="widthFix"></image>
+          <view class="login-btn" >{{nickName}}</view>
+        </view>
+    </view>
+  </view>
+
+
+  <!-- 功能列表 -->
+  <view class="function-list">
+    <view class="list-item" bindtap="goToReservationForm">
+      <image class="front-icon"  src="../../icon/usercenter/reservation.png" mode="aspectFit"></image>
+      <text>我的预约</text>
+      <image class="after-icon"  src="../../icon/detail/down.png" mode="aspectFit"></image>
+    </view>
+
+    <view class="list-item"  plain="true" bindtap="phoneCall">
+      <image class="front-icon"  src="../../icon/store/phone.png" mode="aspectFit"></image>
+      <text>电话沟通</text>
+      <image class="after-icon"  src="../../icon/detail/down.png" mode="aspectFit"></image>
+    </view>
+    <view class="list-item" plain="true"  bindtap="consult">
+      <image class="front-icon"  src="../../icon/store/consult.png" mode="aspectFit"></image>
+      <text>在线咨询</text>
+      <image class="after-icon"  src="../../icon/detail/down.png" mode="aspectFit"></image>
+    </view>
+  </view>
+
+
+  <!-- 功能列表 -->
+  <view class="share-list">
+    <view class="list-item" bindtap="goToPrize">
+      <image class="front-icon"  src="../../icon/usercenter/prize.png" mode="aspectFit"></image>
+      <text>活动抽奖</text>
+      <image class="after-icon"  src="../../icon/detail/down.png" mode="aspectFit"></image>
+    </view>
+    <view class="list-item" bindtap="goToShareQrForm">
+      <image class="front-icon"  src="../../icon/usercenter/qr.png" mode="aspectFit"></image>
+      <text>分享二维码</text>
+      <image class="after-icon"  src="../../icon/detail/down.png" mode="aspectFit"></image>
+    </view>
+  </view>
+
+</view>    

@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="logo-container">
+    <image class="logo" src="../../image/avatar.jpg" mode="widthFix"></image>
+    <view class="app-name">运城英伦罗孚厨电</view>
+  </view>
+  <button class="wechat-login-btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+    手机号快捷登录
+  </button>
+</view>    
