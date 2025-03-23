@@ -5,7 +5,7 @@
                 <image class="reservation-product-img" src="{{item.imageUrl}}" mode="aspectFill"></image>
                 <view class="reservation-product-info">
                 <text class="reservation-product-name">{{item.productName}}</text>
-                <text class="reservation-product-price">¥{{item.productPrice}}</text>
+                <text class="reservation-product-price">{{item.productDescribe}}</text>
                 </view>
             </navigator>    
           </view>
