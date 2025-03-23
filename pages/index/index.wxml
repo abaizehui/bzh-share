@@ -43,7 +43,7 @@
                 <image class="recommend-product-img" src="{{item.imageUrl}}" mode="aspectFill"></image>
                 <view class="recommend-product-info">
                     <text class="recommend-product-name">{{item.productName}}</text>
-                    <text class="recommend-product-price">¥{{item.productPrice}}</text>
+                    <text class="recommend-product-price">{{item.productDescribe}}</text>
                 </view>
             </navigator>
         </view>

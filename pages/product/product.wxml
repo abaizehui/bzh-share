@@ -25,7 +25,7 @@
             <image src="{{item.imageUrl}}" mode="aspectFill"></image>
         <view class="product-info">
           <view class="product-name">{{item.productName}}</view>
-          <view class="product-price">￥{{item.productPrice}}</view>
+          <view class="product-price">{{item.productDescribe}}</view>
         </view>
         </navigator>
       </view>

@@ -33,7 +33,7 @@
                 <image class="serach-product-img" src="{{item.imageUrl}}" mode="aspectFill"></image>
                 <view class="serach-product-info">
                     <text class="serach-product-name">{{item.productName}}</text>
-                    <text class="serach-product-price">¥{{item.productPrice}}</text>
+                    <text class="serach-product-price">{{item.productDescribe}}</text>
                 </view>
             </navigator>
           </view>

@@ -104,3 +104,61 @@ page {
   background-color: #f5f5f5;
 }    
 
+
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 40rpx 50rpx;
+  margin-bottom: 100rpx;
+  border-radius: 24rpx;
+  box-shadow: 0 20rpx 40rpx rgba(0, 0, 0, 0.15);
+}
+
+.qr-code {
+  width: 450rpx;
+  height: 450rpx;
+  margin: 30rpx 20rpx;
+  border-radius: 16rpx;
+
+}
+
+.btn-group {
+  margin-top: 80rpx;
+  margin-left: 120rpx;
+  align-items: center;
+  position: absolute;
+  background: transparent; /* 透明底关键样式 */
+}
+
+.save-btn {
+  background: transparent;
+  color: #fff;
+  border: 2rpx solid #ccc;
+  padding: 16rpx 60rpx;
+  border-radius: 10rpx;
+  font-size: 32rpx;
+  min-width: 240rpx;
+}
+
+.close-btn {
+  margin-top: 30rpx;
+  background: transparent;
+  color: #fff;
+  border: 2rpx solid #ccc;
+  padding: 16rpx 60rpx;
+  border-radius: 10rpx;
+  font-size: 32rpx;
+  min-width: 240rpx;
+}

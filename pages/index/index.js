@@ -14,8 +14,9 @@ Page({
     duration: 1000, // 滑动动画时长，单位为毫秒，这里设置为1秒
     circular: true,
   },
-  onLoad: function () {
+  onLoad: function (query) {
     this.getStore();
+    wx.setStorageSync('shareUserId', decodeURIComponent(query.scene));
   },
   
    /**
@@ -108,6 +109,7 @@ getRecommendProducts: function (storeId) {
     success: (res) => {
       if (res.statusCode === 200) {
         const recommendProducts = res.data.data;
+        console.log(recommendProducts);
         urlUtils.appendBaseUrlToImages(recommendProducts);
         this.setData({
           recommendProducts: recommendProducts

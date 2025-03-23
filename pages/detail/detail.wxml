@@ -3,7 +3,7 @@
         <image class="product-img" src="{{productInfo.imageUrl}}" />
         <view class="product-info">
             <text class="product-name">{{productInfo.productName}}</text>
-            <text class="product-price">￥{{productInfo.productPrice}}</text>
+            <text class="product-price">{{productInfo.productDescribe}}</text>
         </view>
 
         <view class="parameter-info">

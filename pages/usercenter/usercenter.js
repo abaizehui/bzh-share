@@ -1,4 +1,7 @@
-// pages/my/my3.js
+const urlUtils = require('../../utils/urlUtils');
+const app = getApp();
+const baseUrl = app.globalData.apiBaseUrl;
+
 Page({
  
   /**
@@ -7,7 +10,9 @@ Page({
   data: {
     isLogin: false,
     avatarUrl:'../../image/avatar.jpg',
-    nickName:'微信用户'
+    nickName:'微信用户',
+    showPopup: false,
+    qrCodeUrl:""
     
   },
     // 其他事件处理函数
@@ -43,9 +48,91 @@ Page({
       console.log('点击了活动抽奖');
     },
  
-    goToShareQrForm() {
-      console.log('点击了分享二维码');
+   // 保存图片到相册
+  saveImage() {
+    wx.downloadFile({
+      url: this.data.qrCodeUrl, //仅为示例，并非真实的资源
+      success (res) {
+        if (res.statusCode === 200) {
+          wx.saveImageToPhotosAlbum({
+            filePath: res.tempFilePath,
+            success: (res) => {
+              console.log(res);
+              wx.showToast({ title: '保存成功', icon: 'success' });
+            },
+            fail: (err) => {
+              console.log(err);
+              if (err.errMsg.includes('auth deny')) {
+                // 处理授权拒绝情况
+                wx.openSetting({
+                  success: (res) => {
+                    if (res.authSetting['scope.writePhotosAlbum']) {
+                      this.saveImage(); // 重新调用保存
+                    }
+                  }
+                });
+              }
+            }
+          });
+        }
+      }
+    })
+  },
+
+    // 显示弹框
+  showPopup() {
+    if(this.data.isLogin===false){
+      wx.navigateTo({
+        url: '/pages/login/login'
+      });
+      return;
+    } ;
+    this.getQrCode();
+  },
+
+  // 隐藏弹框
+  hidePopup() {
+    this.setData({
+      showPopup: false
+    });
+  },
+
+
+  //获取二维码
+  getQrCode: function () {
+
+    const  shareUserId = wx.getStorageSync('userId');
+    const requestData = {
+      page: 'pages/index/index',
+      scene: shareUserId,
+      envVersion: 'trial',
+      userId: wx.getStorageSync('userId')
+    };
+  wx.request({
+    url: baseUrl+ '/wx/api/getQrCode' ,
+    method: 'POST',
+    data: requestData,
+    header: {
+      'Content-Type': 'application/json' 
     },
+    success: (res) => {
+      if (res.statusCode === 200) {
+        const data = res.data;
+        const qrCodeUrl =urlUtils.appendBaseUrlToImage(data.msg);
+        console.log(qrCodeUrl);
+        this.setData({
+          qrCodeUrl: qrCodeUrl,
+          showPopup: true
+
+        });
+      }
+    },
+    fail: (err) => {
+      console.error('获取产品分类数据失败', err);
+    }
+  });
+},
+
 
  
  

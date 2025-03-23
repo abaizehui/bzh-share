@@ -24,7 +24,7 @@
  }
   
 .product-price {
-    color: red;
+    color: rgb(109, 105, 105);
     margin-top: 15rpx;
     font-size: 37rpx;
 }

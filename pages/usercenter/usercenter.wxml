@@ -43,11 +43,21 @@
       <text>活动抽奖</text>
       <image class="after-icon"  src="../../icon/detail/down.png" mode="aspectFit"></image>
     </view>
-    <view class="list-item" bindtap="goToShareQrForm">
+    <view class="list-item" bindtap="showPopup">
       <image class="front-icon"  src="../../icon/usercenter/qr.png" mode="aspectFit"></image>
       <text>分享二维码</text>
       <image class="after-icon"  src="../../icon/detail/down.png" mode="aspectFit"></image>
     </view>
   </view>
 
+<view class="popup" hidden="{{!showPopup}}">
+  <view class="popup-content">
+    <image class="qr-code" src="{{qrCodeUrl}}" mode="widthFix"></image>
+    <view class="btn-group">
+        <button class="save-btn" bindtap="saveImage">保存图片</button>
+        <button class="close-btn" bindtap="hidePopup">关闭</button>
+  </view>
+  </view>
+</view>
 </view>    
+

@@ -129,8 +129,8 @@
 }
 
 .serach-product-price {
-  color: red;
-  margin-top: 5rpx;
+  color: rgb(109, 105, 105);
+  margin-top: 15rpx;
   font-size: 27rpx;
 }
 

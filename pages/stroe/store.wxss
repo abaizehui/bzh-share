@@ -159,13 +159,14 @@
   
   .recommend-product-item image {
     width: 100%;
-    height: 320rpx;
+    height: 300rpx;
   }
   
   .recommend-product-info {
     display: flex;
     flex-direction: column;
     margin-top: 5rpx;
+    white-space: pre-wrap;
   }
   
   .recommend-product-name {
@@ -175,9 +176,10 @@
   }
   
   .recommend-product-price {
-    color: red;
-    margin-top: 5rpx;
+    color: rgb(109, 105, 105);
+    margin-top: 15rpx;
     font-size: 27rpx;
+
   }
 
   .store-reservation-bar {

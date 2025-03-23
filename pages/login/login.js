@@ -48,7 +48,7 @@ Page({
             url: baseUrl+ '/wx/api/login?code=' +res.code+'&phoneNumber='+phoneNumber,
             method: 'GET',
             success: function (result) {
-              wx.setStorageSync('openId', result.data.data.openId);
+              wx.setStorageSync('userId', result.data.data.id);
               wx.hideLoading();
             }.bind(this),
             fail: function (err) {

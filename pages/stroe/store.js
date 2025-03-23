@@ -179,9 +179,13 @@ navigateToMap: function () {
         });
         return;
     }
+    let  shareUserId = wx.getStorageSync('shareUserId');
+    if (shareUserId==='undefined') {
+        shareUserId = null;
+    }
     // 提交表单逻辑
     wx.request({
-        url: baseUrl+ '/wx/share/submit?storeId='+this.data.storeId+'&name=' +this.data.name+'&phone='+this.data.phone,
+        url: baseUrl+ '/wx/share/submit?storeId='+this.data.storeId+'&name=' +this.data.name+'&phone='+this.data.phone+'&inviterUserId='+shareUserId,
         method: 'GET',
         success: function (res) {
               // 提交成功后，恢复按钮可点击状态
