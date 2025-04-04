@@ -45,7 +45,10 @@ Page({
     },
 
     goToPrize() {
-      console.log('点击了活动抽奖');
+      wx.showToast({
+        title: '暂未开放，敬请期待',
+        icon: 'none'
+    });
     },
  
    // 保存图片到相册
@@ -105,7 +108,7 @@ Page({
     const requestData = {
       page: 'pages/index/index',
       scene: shareUserId,
-      envVersion: 'trial',
+      envVersion: 'release',
       userId: wx.getStorageSync('userId')
     };
   wx.request({

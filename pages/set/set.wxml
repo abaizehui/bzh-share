@@ -1,0 +1,44 @@
+<view class="container">
+    <view class="product-set-main">
+        <image class="product-set-img" src="{{productSetInfo.imageUrl}}" />
+        <view class="product-set-info">
+            <text class="product-set-name">{{productSetInfo.productName}}</text>
+              <scroll-view class="product-set-scroll-container" scroll-x="true"   style="white-space: nowrap">
+              <block wx:for="{{productSetInfo.productList}}" wx:key="id" >
+                  <view class="product-set-product-list">
+                      <view class="product-set-product-item">
+                              <navigator class="product-set-navigator" url="/pages/detail/detail?productId={{item.id}}" open-type="navigate"> 
+                                  <image class="product-set-product-img" src="{{item.imageUrl}}" mode="aspectFill"></image>
+                                  <view class="product-set-product-info">
+                                      <view class="product-set-product-name">{{item.productName}}</view>
+                                      <view class="product-set-product-price">{{item.productDescribe}}</view>
+                                  </view>
+                                  <view class="blank"></view>
+                              </navigator>
+                          </view>
+                      </view>
+              </block>
+        </scroll-view>
+  </view>
+</view>
+
+    <!-- 底部固定按钮区域 -->
+    <view class="product-set-bar">
+        <view class="share">
+            <button class="share-button" plain="true" open-type="share">
+                <image src="../../icon/share/share.png" mode="widthFix"></image>
+                <view class="share-text">分享</view>
+            </button>
+        </view>
+        <view class="contoct">
+            <button class="contoct-button"  plain="true"  bindtap="consult">
+                <image src="../../icon/share/contoct.png" mode="widthFix"></image>
+                <view class="contoct-text">客服</view>
+            </button>
+        </view>
+        <view class="reserve-button" bindtap="reserveProduct">预约享好礼</view>
+  </view>
+
+
+</view>
+

@@ -10,7 +10,8 @@
     "pages/share/share",
     "pages/stroe/store",
     "pages/login/login",
-    "pages/reservation/reservation"
+    "pages/reservation/reservation",
+    "pages/set/set"
   ],
   "window": {
     "backgroundTextStyle": "light",

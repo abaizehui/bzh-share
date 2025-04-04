@@ -8,6 +8,7 @@ Page({
    */
   data: {
     productId:null,
+    productSetId:null,
     name: '',
     phone: '',
     storeId:null

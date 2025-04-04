@@ -7,6 +7,7 @@ Page({
   data: {
     banners: [],
     categories: [],
+    productSets: [],
     recommendProducts: [],
     storeInfo : null,
     autoplay: true, // 开启自动轮播
@@ -16,6 +17,8 @@ Page({
   },
   onLoad: function (query) {
     this.getStore();
+
+
     wx.setStorageSync('shareUserId', decodeURIComponent(query.scene));
   },
   
@@ -53,8 +56,8 @@ getStore: function () {
           });
           this.getBanners(res.data.data.id);
           this.getCategories(res.data.data.id);
+          this.getProductSets(res.data.data.id);
           this.getRecommendProducts(res.data.data.id);
-
       }.bind(this),
       fail: function (err) {
         console.log('接口请求失败', err);
@@ -101,18 +104,17 @@ getCategories: function (storeId) {
     });
   },
 
-  //获取推荐商品
-getRecommendProducts: function (storeId) {
+  //获取推荐套装
+getProductSets: function (storeId) {
   wx.request({
-    url: baseUrl+ '/wx/product/getRecommendProductListByStoreId?storeId=' + storeId, 
+    url: baseUrl+ '/wx/product/set/getProductSetListByStoreId?storeId=' + storeId, 
     method: 'GET',
     success: (res) => {
       if (res.statusCode === 200) {
-        const recommendProducts = res.data.data;
-        console.log(recommendProducts);
-        urlUtils.appendBaseUrlToImages(recommendProducts);
+        const ProductSets = res.data.data;
+        urlUtils.appendBaseUrlToImages(ProductSets);
         this.setData({
-          recommendProducts: recommendProducts
+          productSets: ProductSets
         });
       }
     },
@@ -121,5 +123,26 @@ getRecommendProducts: function (storeId) {
     }
   });
 },
+
+
+  //获取推荐商品
+  getRecommendProducts: function (storeId) {
+    wx.request({
+      url: baseUrl+ '/wx/product/getRecommendProductListByStoreId?storeId=' + storeId, 
+      method: 'GET',
+      success: (res) => {
+        if (res.statusCode === 200) {
+          const recommendProducts = res.data.data;
+          urlUtils.appendBaseUrlToImages(recommendProducts);
+          this.setData({
+            recommendProducts: recommendProducts
+          });
+        }
+      },
+      fail: (err) => {
+        console.error('获取产品分类数据失败', err);
+      }
+    });
+  }
 
 });

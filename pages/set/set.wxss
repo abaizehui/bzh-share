@@ -1,0 +1,144 @@
+.container {
+  background-color: #f0f8ff;
+
+}
+
+.product-set-img {
+  width: 100%;
+  height: 700rpx;
+}
+
+.product-set-info {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx 10rpx;
+  border-radius: 20rpx;
+}
+
+.product-set-name {
+  font-size: 35rpx;
+  font-family: Arial, sans-serif;
+  color: rgb(20, 20, 20);
+  margin-left: 30rpx;
+}
+
+
+.product-set-product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  display: inline-block;
+  width: 48.5%;
+  padding: 8rpx;
+  margin-top: 10rpx;
+}
+
+.product-set-product-item {
+  border: 1rpx solid #ccc;
+  text-align: center;
+  background-color: #fff;
+}
+
+.product-set-navigator {
+    background-color: transparent;
+    
+}
+
+.product-set-product-item image {
+  width: 100%;
+  height: 350rpx;
+}
+
+.product-set-product-info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rpx;
+  white-space: pre-wrap;
+
+}
+
+.product-set-product-name {
+  font-size: 30rpx;
+  font-family: Arial, sans-serif;
+  color: rgb(20, 20, 20);
+}
+
+.product-set-product-price {
+  color: #666666;
+  font-size: 27rpx;
+  white-space: nowrap; /* 禁止换行 */
+  overflow: hidden; /* 超出部分隐藏 */
+  text-overflow: ellipsis; /* 超出部分显示省略号 */
+  padding: 10rpx;
+}
+
+
+
+
+
+.product-set-bar {
+  display: flex;
+  bottom: 0;
+  position: fixed;
+  justify-content: space-around;
+  padding: 30rpx 20rpx;
+  background-color: #fff;
+  width: 100%;
+
+}
+
+.share-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent; /* 背景透明 */
+  margin-left: 30rpx;
+}
+
+button[plain]{
+    border: 0;
+}
+
+.share-button image {
+  width: 45rpx;
+}
+
+.share-text {
+  font-size: 23rpx;
+}
+
+
+
+.contoct-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent; /* 背景透明 */
+  margin-right: 10rpx;
+}
+
+.contoct-button image {
+  width: 45rpx;
+}
+
+.contoct-text {
+  font-size: 23rpx;
+}
+
+.reserve-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #007AFF;
+  color: #fff;
+  border-radius: 15rpx;
+  width: 400rpx;
+  height: 90rpx;
+  font-size: 29rpx;
+  padding: 0 20rpx;
+  margin-right: 30rpx;
+}
+
+.blank {
+  height: 10rpx;
+}

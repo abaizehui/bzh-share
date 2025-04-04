@@ -24,9 +24,9 @@
  }
   
 .product-price {
-    color: rgb(109, 105, 105);
+    color: #666666;
     margin-top: 15rpx;
-    font-size: 37rpx;
+    font-size: 30rpx;
 }
 
     

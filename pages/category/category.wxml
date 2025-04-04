@@ -31,6 +31,7 @@
                 <view class="category-product-info">
                 <text class="category-product-name">{{item.productName}}</text>
                 <text class="category-product-price">{{item.productDescribe}}</text>
+                <view class="blank"></view>
                 </view>
             </navigator>    
           </view>

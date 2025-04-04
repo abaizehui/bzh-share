@@ -7,6 +7,11 @@
     </block>
   </swiper>
 
+
+  <view class="look-section">
+    <image class="look-section-img" src="../../icon/index/popular.png"></image>
+    <view class="look-section-title">产品分类</view>
+</view>
   <scroll-view class="category-scroll-container" scroll-y="true"   style="overflow-y: auto">
   <block wx:for="{{categories}}" wx:key="id" >
     <view class="category-item">
@@ -20,33 +25,56 @@
   </block>
 </scroll-view>
 
+
 <view class="look-section">
     <image class="look-section-img" src="../../icon/index/popular.png"></image>
-    <view class="look-section-title">进店看一看</view>
+    <view class="look-section-title">预约到店</view>
 </view>
 <view class="look-store">
-
     <navigator  url="/pages/stroe/store" open-type="navigate"> 
         <image class="look-store-img" src="{{storeInfo.imageUrl}}" mode="aspectFill"></image>
     </navigator>
 </view>
 
-
-  <view class="recommend-products">
-    <view class="recommend-section">
-        <image class="recommend-section-img" src="../../icon/index/popular.png"></image>
-        <view class="recommend-section-title">热门产品</view>
+  <view class="products-set">
+    <view class="products-set-section">
+        <image class="products-set-section-img" src="../../icon/index/popular.png"></image>
+        <view class="products-set-section-title">推荐套系</view>
     </view>
-      <view class="recommend-product-list">
-        <view class="recommend-product-item" wx:for="{{recommendProducts}}" wx:key="id">
-            <navigator class="recommend-navigator" url="/pages/detail/detail?productId={{item.id}}" open-type="navigate"> 
-                <image class="recommend-product-img" src="{{item.imageUrl}}" mode="aspectFill"></image>
-                <view class="recommend-product-info">
-                    <text class="recommend-product-name">{{item.productName}}</text>
-                    <text class="recommend-product-price">{{item.productDescribe}}</text>
+      <view class="products-set-list">
+        <view class="products-set-item" wx:for="{{productSets}}" wx:key="id">
+            <navigator class="products-set-navigator" url="/pages/set/set?productSetId={{item.id}}" open-type="navigate"> 
+                <image class="products-set-img" src="{{item.imageUrl}}" mode="aspectFill"></image>
+                <view class="products-set-info">
+                    <text class="products-set-name">{{item.productName}}</text>
+                    <text class="products-set-describe">{{item.productDescribe}}</text>
+                    <view class="blank"></view>
                 </view>
             </navigator>
         </view>
       </view>
   </view>
+
+  <view class="look-section">
+    <image class="look-section-img" src="../../icon/index/popular.png"></image>
+    <view class="look-section-title">省心搭配</view>
+</view>
+
+<scroll-view class="recommend-scroll-container" scroll-x="true"   style="white-space: nowrap" >
+    <block wx:for="{{recommendProducts}}" wx:key="id" >
+        <view class="recommend-product-list">
+            <view class="recommend-product-item">
+                    <navigator class="recommend-navigator" url="/pages/detail/detail?productId={{item.id}}" open-type="navigate"> 
+                        <image class="recommend-product-img" src="{{item.imageUrl}}" mode="aspectFill"></image>
+                        <view class="recommend-product-info">
+                            <view class="recommend-product-name">{{item.productName}}</view>
+                            <view class="recommend-product-price">{{item.productDescribe}}</view>
+                            <view class="blank"></view>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+    </block>
+    </scroll-view>
+  
 </view>

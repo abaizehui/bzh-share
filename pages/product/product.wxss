@@ -104,13 +104,13 @@
 }
 
 .product-name {
-  font-size: 27rpx;
+  font-size: 30rpx;
   font-family: Arial, sans-serif;
   color: rgb(20, 20, 20);
 }
 
 .product-price {
-  color: rgb(109, 105, 105);
-  margin-top: 15rpx;
+  color: #666666;
+  margin-top: 10rpx;
   font-size: 27rpx;
 }

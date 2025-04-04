@@ -38,7 +38,7 @@
 
   <view class="recommend-products">
     <view class="recommend-section">
-        <view class="recommend-section-title">热门产品</view>
+        <view class="recommend-section-title">省心搭配</view>
     </view>
     
     <scroll-view class="recommend-scroll-container" scroll-x="true"   style="white-space: nowrap">
