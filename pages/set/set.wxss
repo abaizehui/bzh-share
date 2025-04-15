@@ -11,7 +11,7 @@
 .product-set-info {
   display: flex;
   flex-direction: column;
-  padding: 40rpx 10rpx;
+  padding: 20rpx 10rpx;
   border-radius: 20rpx;
 }
 

@@ -19,7 +19,9 @@
                       </view>
               </block>
         </scroll-view>
+        
   </view>
+
 </view>
 
     <!-- 底部固定按钮区域 -->

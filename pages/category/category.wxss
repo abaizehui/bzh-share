@@ -62,13 +62,12 @@
   width: 49%;
   margin-bottom: 13rpx;
   border: 1rpx solid #ccc;
-  border-radius: 15rpx;
   overflow: hidden;
   text-align: center;
 }
 .category-product-item image {
   width: 100%;
-  height: 340rpx;
+  height: 350rpx;
 }
 
 .category-product-info {
