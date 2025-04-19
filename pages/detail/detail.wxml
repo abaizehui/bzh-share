@@ -17,7 +17,7 @@
             </view>
                <!-- 触发按钮 -->
                <view class="config-btn-info" bindtap="showConfigModal" wx:if="{{productInfo.productConfigList.length > 0}}">
-                <view >功能配置：</view>
+                <view >配置：</view>
                 <view class="config-btn-item">
                     <text wx:for="{{productInfo.productConfigList}}" wx:key="item">   {{item.configValue}}</text>
                 </view>
@@ -31,6 +31,7 @@
             <view class="parameter-modal-container" wx:if="{{showModal}}">
                 <view class="parameter-modal-content">
                     <!-- 自定义内容 -->
+                    <view class="parameter-modal-title">产品参数： </view>
                     <view class="parameter-modal-item" wx:for="{{productInfo.productParamList}}" wx:key="id">
                         <view class="parameter-item-label">{{item.paramName}}</view>
                         <view class="parameter-item-value">{{item.paramValue}}</view>
@@ -45,6 +46,7 @@
             <!-- 弹窗内容 -->
             <view class="config-modal-container" wx:if="{{showConfigModal}}">
                 <view class="config-modal-content">
+                  <view class="parameter-modal-title">产品配置： </view>
                     <!-- 自定义内容 -->
                     <view class="config-modal-item" wx:for="{{productInfo.productConfigList}}" wx:key="id">
                         <view class="config-item-label">{{item.configName}}</view>

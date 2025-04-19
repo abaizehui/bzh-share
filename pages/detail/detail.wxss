@@ -83,26 +83,30 @@
 .parameter-modal-content {
     background: white;
     border-radius: 24rpx 24rpx 0 0;
-    padding: 30rpx;
+    padding: 40rpx;
     transform: translateY(0);
     animation: slideUp 0.3s;
 }
 
+.parameter-modal-title {
+  font-size: 35rpx;
+  margin-bottom: 30rpx;
+}
+
 
 .parameter-modal-item {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     display: flex;
     justify-content: space-between;
   }
 
   .parameter-item-label {
     color: #666;
-    margin-left: 10rpx;
 }
 
 .parameter-item-value {
-    width: 50%;
-    margin-right: 30rpx;
+    width: 55%;
+    margin-right: 50rpx;
 }
 
 
@@ -110,7 +114,7 @@
 .config-btn-info {
     display: flex;
     white-space: nowrap;
-    margin-top: 30rpx;
+    margin-top: 20rpx;
     justify-content: space-between; /* 新增，让标题和箭头分别在两端 */
 }
   
@@ -153,25 +157,21 @@
 .config-modal-content {
     background: white;
     border-radius: 24rpx 24rpx 0 0;
-    padding: 50rpx;
+    padding: 40rpx;
     transform: translateY(0);
-    animation: slideUp 0.2s;
+    animation: slideUp 0.3s;
 
 }
 
 
 .config-modal-item {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 100%;
   }
-  .config-item-label {
-    color: #666;
-}
+
 .config-item-value {
-    width: 70%;
+    width: 95%;
     margin-right: 10rpx;
 }
 

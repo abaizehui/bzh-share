@@ -50,6 +50,7 @@
                         <view class="recommend-product-info">
                             <view class="recommend-product-name">{{item.productName}}</view>
                             <view class="recommend-product-price">{{item.productDescribe}}</view>
+                            <view class="blank"></view>
                         </view>
                     </navigator>
                 </view>

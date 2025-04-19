@@ -90,13 +90,21 @@ Page({
     }
     let  shareUserId = wx.getStorageSync('shareUserId');
     if (shareUserId==='undefined') {
-        shareUserId = null;
+        shareUserId = 0;
     }
+    const submitData = {
+      storeId: this.data.storeId,
+      name: this.data.name,
+      phone: this.data.phone,
+      inviterUserId: shareUserId,
+      productId:this.data.productId
+    };
 
     // 提交表单逻辑
     wx.request({
-        url: baseUrl+ '/wx/share/submit?storeId='+this.data.storeId+'&name=' +this.data.name+'&phone='+this.data.phone+'&productId='+this.data.productId+'&inviterUserId='+shareUserId,
-        method: 'GET',
+        url: baseUrl+ '/wx/share/submit',
+        method: 'POST',
+        data: submitData,
         success: function (res) {
               // 提交成功后，恢复按钮可点击状态
             wx.showToast({

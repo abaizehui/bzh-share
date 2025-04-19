@@ -144,11 +144,7 @@
   }
 
 .recommend-product-item {
-    border-radius: 15rpx;
-    margin-bottom: 15rpx;
     border: 1rpx solid #ccc;
-    border-radius: 15rpx;
-    padding: 20rpx;
     text-align: center;
     background-color: #fff;
   }
@@ -159,7 +155,7 @@
   
   .recommend-product-item image {
     width: 100%;
-    height: 300rpx;
+    height: 350rpx;
   }
   
   .recommend-product-info {
@@ -172,19 +168,22 @@
   .recommend-product-name {
     font-size: 27rpx;
     font-family: Arial, sans-serif;
+    margin-top: 5rpx;
     color: rgb(20, 20, 20);
   }
   
   .recommend-product-price {
-    color: rgb(109, 105, 105);
-    margin-top: 15rpx;
+    color: #666666;
+    margin-top: 10rpx;
     font-size: 27rpx;
     white-space: nowrap; /* 禁止换行 */
     overflow: hidden; /* 超出部分隐藏 */
     text-overflow: ellipsis; /* 超出部分显示省略号 */
-
+    margin-left: 10rpx;
   }
-
+  .blank {
+    height: 20rpx;
+  }
   .store-reservation-bar {
     display: flex;
     bottom: 0;

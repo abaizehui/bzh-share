@@ -181,13 +181,22 @@ navigateToMap: function () {
     }
     let  shareUserId = wx.getStorageSync('shareUserId');
     if (shareUserId==='undefined') {
-        shareUserId = null;
+        shareUserId = 0;
     }
+
+    const submitData = {
+      storeId: this.data.storeId,
+      name: this.data.name,
+      phone: this.data.phone,
+      inviterUserId: shareUserId
+    };
     // 提交表单逻辑
     wx.request({
-        url: baseUrl+ '/wx/share/submit?storeId='+this.data.storeId+'&name=' +this.data.name+'&phone='+this.data.phone+'&inviterUserId='+shareUserId,
-        method: 'GET',
+        url: baseUrl+ '/wx/share/submit',
+        method: 'POST',
+        data: submitData,
         success: function (res) {
+          console.log(res);
               // 提交成功后，恢复按钮可点击状态
             wx.showToast({
                 title: '预约成功',
@@ -196,6 +205,7 @@ navigateToMap: function () {
             this.setData({
                 showModal: false
             })
+            wx.setStorageSync('submitPhone',this.data.phone);
             wx.setStorageSync('submitName',this.data.name);
         }.bind(this),
         fail: function (err) {
