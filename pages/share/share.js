@@ -105,7 +105,7 @@ Page({
         url: baseUrl+ '/wx/share/submit',
         method: 'POST',
         data: submitData,
-        success: function (res) {
+        success: function () {
               // 提交成功后，恢复按钮可点击状态
             wx.showToast({
                 title: '预约成功',
