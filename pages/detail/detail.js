@@ -1,4 +1,3 @@
-const urlUtils = require('../../utils/urlUtils');
 const app = getApp();
 const baseUrl = app.globalData.apiBaseUrl;
 const appId = app.globalData.appId;
@@ -67,9 +66,6 @@ getProductById: function (productId) {
       success: function (res) {
 
         const productInfo = res.data.data;
-        productInfo.imageUrl = urlUtils.appendBaseUrlToImage(productInfo.imageUrl);
-
-        urlUtils.appendBaseUrlToImages(productInfo.productDetailImages);
         this.setData({
             productInfo: productInfo
           });

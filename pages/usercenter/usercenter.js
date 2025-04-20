@@ -1,4 +1,3 @@
-const urlUtils = require('../../utils/urlUtils');
 const app = getApp();
 const baseUrl = app.globalData.apiBaseUrl;
 
@@ -120,13 +119,9 @@ Page({
     },
     success: (res) => {
       if (res.statusCode === 200) {
-        const data = res.data;
-        const qrCodeUrl =urlUtils.appendBaseUrlToImage(data.msg);
-        console.log(qrCodeUrl);
         this.setData({
-          qrCodeUrl: qrCodeUrl,
+          qrCodeUrl: res.data.msg,
           showPopup: true
-
         });
       }
     },

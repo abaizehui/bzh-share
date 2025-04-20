@@ -1,4 +1,3 @@
-const urlUtils = require('../../utils/urlUtils');
 const app = getApp();
 const baseUrl = app.globalData.apiBaseUrl;
 const appId = app.globalData.appId;
@@ -50,7 +49,6 @@ getStore: function () {
           const storeInfo = res.data.data;
           wx.setStorageSync('storeId', storeInfo.id);
           wx.setStorageSync('storeInfo', storeInfo);
-          storeInfo.imageUrl = urlUtils.appendBaseUrlToImage(storeInfo.imageUrl);
           this.setData({
             storeInfo: storeInfo
           });
@@ -72,7 +70,6 @@ getBanners: function (storeId) {
       success: (res) => {
         if (res.statusCode === 200) {
           const banners = res.data.data;
-          urlUtils.appendBaseUrlToImages(banners);
           this.setData({
             banners: banners
           });
@@ -92,7 +89,6 @@ getCategories: function (storeId) {
       success: (res) => {
         if (res.statusCode === 200) {
             const categories = res.data.data;
-            urlUtils.appendBaseUrlToImages(categories);
             this.setData({
                 categories: categories
             });
@@ -111,10 +107,9 @@ getProductSets: function (storeId) {
     method: 'GET',
     success: (res) => {
       if (res.statusCode === 200) {
-        const ProductSets = res.data.data;
-        urlUtils.appendBaseUrlToImages(ProductSets);
+        const productSets = res.data.data;
         this.setData({
-          productSets: ProductSets
+          productSets: productSets
         });
       }
     },
@@ -133,7 +128,6 @@ getProductSets: function (storeId) {
       success: (res) => {
         if (res.statusCode === 200) {
           const recommendProducts = res.data.data;
-          urlUtils.appendBaseUrlToImages(recommendProducts);
           this.setData({
             recommendProducts: recommendProducts
           });

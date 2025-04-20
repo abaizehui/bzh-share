@@ -1,4 +1,3 @@
-const urlUtils = require('../../utils/urlUtils');
 const app = getApp();
 const baseUrl = app.globalData.apiBaseUrl;
 const appId = app.globalData.appId;
@@ -33,8 +32,6 @@ getStore: function () {
       method: 'GET',
       success: function (res) {
           const storeInfo = res.data.data;
-          storeInfo.imageUrl = urlUtils.appendBaseUrlToImage(storeInfo.imageUrl);
-          storeInfo.carUrl = urlUtils.appendBaseUrlToImage(storeInfo.carUrl);
           this.setData({
             storeInfo: storeInfo,
             phoneNumber: storeInfo.tel,
@@ -65,7 +62,6 @@ getRecommendProducts: function (storeId) {
       success: (res) => {
         if (res.statusCode === 200) {
           const recommendProducts = res.data.data;
-          urlUtils.appendBaseUrlToImages(recommendProducts);
           this.setData({
             recommendProducts: recommendProducts
           });

@@ -10,6 +10,7 @@
     <!-- 分类导航栏 -->
     <view class="category-tab-scroll" 
              scroll-x="true"
+             scroll-left="{{scrollLeft}}"
              scroll-with-animation="true">
         <view class="category-tab-item" 
                 wx:for="{{categoryList}}" 

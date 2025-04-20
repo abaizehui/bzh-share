@@ -1,4 +1,3 @@
-const urlUtils = require('../../utils/urlUtils');
 const app = getApp();
 const baseUrl = app.globalData.apiBaseUrl;
 Page({
@@ -47,7 +46,6 @@ getCategories: function (storeId) {
       success: (res) => {
         if (res.statusCode === 200) {
             const productList = res.data.data;
-            urlUtils.appendBaseUrlToImages(productList);
             this.setData({
                 productList: productList
             });

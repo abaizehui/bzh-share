@@ -57,8 +57,8 @@ Page({
                         phone: phone
                     });
                 }.bind(this),
-                fail: function (err) {
-                console.log('接口请求失败', err);
+                    fail: function (err) {
+                    console.log('接口请求失败', err);
                 }
             });
         } else {
@@ -88,18 +88,27 @@ Page({
         });
         return;
     }
-    let  shareUserId = wx.getStorageSync('shareUserId');
+    let shareUserId = wx.getStorageSync('shareUserId');
     if (shareUserId==='undefined') {
-        shareUserId = 0;
+        shareUserId = null;
     }
+    let productId = this.data.productId; 
+    if (typeof productId === 'undefined') {
+      productId = null; 
+    }
+    let productSetId = this.data.productSetId; 
+    if (typeof productSetId === 'undefined') {
+      productSetId = null; 
+    }
+    
     const submitData = {
       storeId: this.data.storeId,
       name: this.data.name,
       phone: this.data.phone,
       inviterUserId: shareUserId,
-      productId:this.data.productId
+      productId: productId,
+      productSetId: productSetId
     };
-
     // 提交表单逻辑
     wx.request({
         url: baseUrl+ '/wx/share/submit',
@@ -136,7 +145,7 @@ getStore: function () {
           wx.setStorageSync('storeId', res.data.data.id);
       }.bind(this),
       fail: function (err) {
-        console.log('接口请求失败', err);
+          console.log('接口请求失败', err);
       }
     });
   },
@@ -152,7 +161,8 @@ getStore: function () {
     this.setData({
         phone: phone,
         name: name,
-        productId: options.productId
+        productId: options.productId,
+        productSetId:options.productSetId
     })
   },
 

@@ -1,4 +1,3 @@
-const urlUtils = require('../../utils/urlUtils');
 const app = getApp();
 const baseUrl = app.globalData.apiBaseUrl;
 Page({
@@ -69,11 +68,10 @@ Page({
       if (res.statusCode === 200) {
 
           const serachProducts = res.data.data;
-          urlUtils.appendBaseUrlToImages(serachProducts);
             if(serachProducts.length<=0) {
-            this.setData({
-                hasResult: false
-            });
+                this.setData({
+                    hasResult: false
+                });
             } else {
             this.setData({
                 hasResult: true

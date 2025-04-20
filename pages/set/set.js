@@ -1,4 +1,3 @@
-const urlUtils = require('../../utils/urlUtils');
 const app = getApp();
 const baseUrl = app.globalData.apiBaseUrl;
 
@@ -99,15 +98,9 @@ getProductSetById: function (productSetId) {
     url: baseUrl+ '/wx/product/set/getProductSetBySetId?productSetId=' +productSetId,
     method: 'GET',
     success: function (res) {
-
-      console.log(res);
       const productSetInfo = res.data.data;
-      productSetInfo.imageUrl = urlUtils.appendBaseUrlToImage(productSetInfo.imageUrl);
-
-      urlUtils.appendBaseUrlToImages(productSetInfo.productSetDetailImages);
-      urlUtils.appendBaseUrlToImages(productSetInfo.productList);
-      this.setData({
-        productSetInfo: productSetInfo
+        this.setData({
+            productSetInfo: productSetInfo
         });
     }.bind(this),
     fail: function (err) {
