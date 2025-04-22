@@ -14,12 +14,6 @@ Page({
     duration: 1000, // 滑动动画时长，单位为毫秒，这里设置为1秒
     circular: true,
   },
-  handleFullScreenChange: function(e) {
-    if (!e.detail.fullScreen) {
-      // 这里可以添加退出全屏后的一些额外操作
-    }
-  },
-
 
   onLoad: function (query) {
     this.getStore();
