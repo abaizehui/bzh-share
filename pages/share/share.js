@@ -11,7 +11,8 @@ Page({
     productSetId:null,
     name: '',
     phone: '',
-    storeId:null
+    storeId:null,
+    shareUrl:''
   },
   
 
@@ -140,7 +141,8 @@ getStore: function () {
       method: 'GET',
       success: function (res) {
           this.setData({
-            storeId: res.data.data.id
+            storeId: res.data.data.id,
+            shareUrl:res.data.data.shareUrl
           });
           wx.setStorageSync('storeId', res.data.data.id);
       }.bind(this),

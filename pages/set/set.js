@@ -1,5 +1,6 @@
 const app = getApp();
 const baseUrl = app.globalData.apiBaseUrl;
+const appId = app.globalData.appId;
 
 Page({
 
@@ -7,13 +8,37 @@ Page({
    * 页面的初始数据
    */
   data: {
-    productSetInfo:{}
+    productSetInfo:{},
+    corpId:'',
+    extInfo:''
   },
+
+
+// 获取门店信息
+getStore: function () {
+  wx.request({
+    url: baseUrl+ '/wx/store/getStoreByAppId?appId=' +appId,
+    method: 'GET',
+    success: function (res) {
+        const storeInfo = res.data.data;
+        wx.setStorageSync('storeId', storeInfo.id);
+        wx.setStorageSync('storeInfo', storeInfo);
+        this.setData({
+          corpId:storeInfo.corpId,
+          extInfo:storeInfo.extInfo
+        });
+    }.bind(this),
+    fail: function (err) {
+      console.log('接口请求失败', err);
+    }
+  });
+},
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    this.getStore();
     this.getProductSetById(options.productSetId);
 
   },
@@ -65,7 +90,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage(res) {
-    if(res.from === 'button'){
+    if(res.from === 'menu' || res.from === 'button'){
         const productSetInfo = this.data.productSetInfo;
         const img = productSetInfo.imageUrl;
         return {

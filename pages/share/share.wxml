@@ -1,5 +1,5 @@
 <view class="container">
-    <image class="img" src="../../image/share.jpg" mode="widthFix"></image>
+    <image class="img" src="{{shareUrl}}" mode="widthFix"></image>
     <!-- 底部固定按钮区域 -->
     <view class="store-reservation-bar">
             <view class="store-reservation" bindtap="showModal">立即预约 锁定权益</view>

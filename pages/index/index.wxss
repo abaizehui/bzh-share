@@ -7,7 +7,7 @@ page {
 }
 
 .banner-swiper {
-  height: 320rpx;
+  height: 340rpx;
 }
 
 .banner-swiper image {

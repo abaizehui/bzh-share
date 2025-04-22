@@ -152,7 +152,7 @@ consult: function () {
    * 用户点击右上角分享
    */
   onShareAppMessage(res) {
-    if(res.from === 'button'){
+    if(res.from === 'menu' || res.from === 'button'){
         const productInfo = this.data.productInfo;
         const img = productInfo.imageUrl;
         return {

@@ -10,14 +10,19 @@ Page({
     recommendProducts: [],
     storeInfo : null,
     autoplay: true, // 开启自动轮播
-    interval: 3000, // 轮播间隔时间，单位为毫秒，这里设置为3秒
+    interval: 5000, // 轮播间隔时间，单位为毫秒，这里设置为3秒
     duration: 1000, // 滑动动画时长，单位为毫秒，这里设置为1秒
     circular: true,
   },
+  handleFullScreenChange: function(e) {
+    if (!e.detail.fullScreen) {
+      // 这里可以添加退出全屏后的一些额外操作
+    }
+  },
+
+
   onLoad: function (query) {
     this.getStore();
-
-
     wx.setStorageSync('shareUserId', decodeURIComponent(query.scene));
   },
   
