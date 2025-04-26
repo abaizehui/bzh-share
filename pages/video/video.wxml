@@ -1,0 +1,1 @@
+<video src="{{videoUrl}}" autoplay controls style="width: 100%; height: 100vh;"></video>

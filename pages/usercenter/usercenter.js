@@ -195,7 +195,7 @@ Page({
    */
   onShareAppMessage() {
       return {
-        title : '运城英伦罗孚厨电',
+        title : '运城英伦罗孚｜洛恩斯厨电',
         path: '/pages/index/index'
       } 
   }

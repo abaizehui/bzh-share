@@ -270,7 +270,7 @@ navigateToMap: function () {
    */
   onShareAppMessage() {
     return {
-        title: '运城英伦罗孚厨电', // 分享标题
+        title: '运城英伦罗孚｜洛恩斯厨电', // 分享标题
         path: '/pages/stroe/store'
       };
   },
@@ -278,7 +278,7 @@ navigateToMap: function () {
     // 分享到朋友圈
     onShareTimeline() {
         return {
-        title: '运城英伦罗孚厨电', // 分享标题
+        title: '运城英伦罗孚｜洛恩斯厨电', // 分享标题
         path: '/pages/stroe/stroe'
         };
     },

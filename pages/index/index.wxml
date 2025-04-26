@@ -76,4 +76,29 @@
             </view>
     </block>
     </scroll-view>
+
+    <view class="look-section">
+        <image class="look-section-img" src="../../icon/index/popular.png"></image>
+        <view class="look-section-title">大家都在看</view>
+    </view>
+
+    <view class="card-container">
+        <view class="card" wx:for="{{storeVideos}}" wx:key="*this" bindtap="playVideo" data-url="{{item.videoUrl}}" data-id="{{item.id}}">
+              <view class="image-container">
+                <image class="image-container-image" src="{{item.imageUrl}}" mode="aspectFill"></image>
+                <image class="play-icon" src="../../icon/video/play.png"></image>
+            </view>
+            <view class="card-video-describe">{{item.videoDescribe}}</view>
+            <view class="card-video-play">
+              <view class="card-video-play-text">预览</view>
+              <view class="card-video-play-num">
+                    <image src="../../icon/video/preview.png"></image>
+                    {{item.videoPlay}}
+              </view>
+            </view>
+        </view>
+    </view>
+    
+    
+
 </view>

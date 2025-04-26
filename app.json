@@ -11,12 +11,13 @@
     "pages/stroe/store",
     "pages/login/login",
     "pages/reservation/reservation",
-    "pages/set/set"
+    "pages/set/set",
+    "pages/video/video"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "运城英伦罗孚厨电",
+    "navigationBarTitleText": "运城英伦罗孚｜洛恩斯厨电",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": false,
     "backgroundColor": "#efefef"

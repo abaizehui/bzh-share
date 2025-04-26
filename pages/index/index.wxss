@@ -129,7 +129,6 @@ page {
 .products-set-info {
   display: flex;
   flex-direction: column;
-  padding: 5rpx;
 }
 
 .products-set-name {
@@ -151,8 +150,8 @@ page {
   flex-wrap: wrap;
   justify-content: space-between;
   display: inline-block;
-  width: 48%;
-  padding: 8rpx;
+  width: 49%;
+  padding: 5rpx;
 }
 
 .recommend-product-item {
@@ -196,4 +195,72 @@ page {
 }
 .blank {
   height: 20rpx;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+.card {
+  width: 49%;
+  border: 1rpx solid #ccc;
+  margin-bottom: 10rpx;
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-container-image {
+  width: 100%;
+  height: 500rpx;
+  display: block;
+}
+
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70rpx;
+  height: 70rpx;
+  z-index: 1;
+}
+
+.card-video-describe {
+  padding: 15rpx 0rpx 0rpx 20rpx;
+  font-size: 27rpx;
+
+}
+
+.card-video-play {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15rpx 20rpx;
+  border-radius: 5rpx;
+  color: #8a8a8a;
+
+}
+
+.card-video-play-text {
+  font-size: 24rpx;
+
+}
+
+.card-video-play-num {
+  font-size: 26rpx;
+  font-weight: bold;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}
+.card-video-play-num image {
+  width: 30rpx;
+  height: 20rpx;
+  margin-right: 10rpx;
 }

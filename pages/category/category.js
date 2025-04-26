@@ -113,14 +113,14 @@ getCategories: function (storeId) {
   onShareAppMessage() {
 
     return {
-        title : '运城英伦罗孚厨电',
+        title : '运城英伦罗孚｜洛恩斯厨电',
         path: '/pages/index/index'
     }
   },
     // 分享到朋友圈
 onShareTimeline() {
     return {
-       title: '运城英伦罗孚厨电', // 分享标题
+       title: '运城英伦罗孚｜洛恩斯厨电', // 分享标题
        path: '/pages/index/index'
      };
 },

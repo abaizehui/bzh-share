@@ -13,7 +13,17 @@ Page({
     interval: 5000, // 轮播间隔时间，单位为毫秒，这里设置为3秒
     duration: 1000, // 滑动动画时长，单位为毫秒，这里设置为1秒
     circular: true,
+    storeVideos: []
   },
+
+  playVideo: function (e) {
+    const videoUrl = e.currentTarget.dataset.url;
+    const storeVideoId = e.currentTarget.dataset.id;
+    this.updateStoreVideoPlayById(storeVideoId);
+    wx.navigateTo({
+        url: `/pages/video/video?videoUrl=${videoUrl}`
+    });
+},
 
   onLoad: function (query) {
     this.getStore();
@@ -26,7 +36,7 @@ Page({
 onShareAppMessage() {
 
     return {
-        title : '运城英伦罗孚厨电',
+        title : '运城英伦罗孚｜洛恩斯厨电',
         path: '/pages/index/index'
     }
 },
@@ -34,7 +44,7 @@ onShareAppMessage() {
   // 分享到朋友圈
 onShareTimeline() {
     return {
-       title: '运城英伦罗孚厨电', // 分享标题
+       title: '运城英伦罗孚｜洛恩斯厨电', // 分享标题
        path: '/pages/index/index'
      };
 },
@@ -55,6 +65,7 @@ getStore: function () {
           this.getCategories(res.data.data.id);
           this.getProductSets(res.data.data.id);
           this.getRecommendProducts(res.data.data.id);
+          this.getStoreVideoByStoreId(res.data.data.id);
       }.bind(this),
       fail: function (err) {
         console.log('接口请求失败', err);
@@ -118,6 +129,40 @@ getProductSets: function (storeId) {
   });
 },
 
+
+  //获取门店视频
+  getStoreVideoByStoreId: function (storeId) {
+    wx.request({
+      url: baseUrl+ '/wx/store/getStoreVideoByStoreId?storeId=' + storeId, 
+      method: 'GET',
+      success: (res) => {
+        if (res.statusCode === 200) {
+          const storeVideos = res.data.data;
+          this.setData({
+            storeVideos: storeVideos
+          });
+        }
+      },
+      fail: (err) => {
+        console.error('获取门店视频数据失败', err);
+      }
+    });
+  },
+
+
+  //修改门店视频观看数量
+  updateStoreVideoPlayById: function (storeVideoId) {
+    wx.request({
+      url: baseUrl+ '/wx/store/updateStoreVideoPlayById?storeVideoId=' + storeVideoId, 
+      method: 'GET',
+      success: (res) => {
+    
+      },
+      fail: (err) => {
+        console.error('修改门店视频观看数量失败', err);
+      }
+    });
+  },
 
   //获取推荐商品
   getRecommendProducts: function (storeId) {
